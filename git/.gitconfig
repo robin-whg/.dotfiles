@@ -1,0 +1,5 @@
+[user]
+	email = mail@robin-whg.com
+	name = robin-whg
+[init]
+	defaultBranch = master
