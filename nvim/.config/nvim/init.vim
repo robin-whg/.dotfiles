@@ -84,6 +84,7 @@ endif
 
 call plug#begin('$HOME/.config/nvim/autoload/plugged')
 
+    Plug 'lambdalisue/suda.vim'
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
     " Auto pairs for '(' '[' '{'
