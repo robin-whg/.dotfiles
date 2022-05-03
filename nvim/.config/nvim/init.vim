@@ -8,7 +8,7 @@ set equalalways
 
 syntax enable                           " Enables syntax highlighing
 set termguicolors
-" set hidden                              " Required to keep multiple buffers open multiple buffers
+set hidden                              " Required to keep multiple buffers open
 set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed
 set fileencoding=utf-8                  " The encoding written to file
@@ -41,7 +41,13 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 set autochdir                           " Your working directory will always be the same as your working directory
 
 " You can't stop me
-cmap w!! w !sudo tee %
+cmap w!! :SudaWrite
+
+" Buffer Navigation
+nnoremap <Leader>b :buffers<CR>:buffer<Space>
+nnoremap <C-l> <C-^>
+nnoremap <C-n> :buffern <CR>
+nnoremap <C-p> :bufferp <CR>
 
 " Esc to jk
 imap jk <Esc>
@@ -59,14 +65,12 @@ nnoremap <M-k>    :resize +2<CR>
 nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
-" Tabbing
-nnoremap <C-n> gt
-nnoremap <C-p> gT
 
-nnoremap <C-x> ZZ
 
 " Alternate way to save
 nnoremap <C-s> :w<CR>
+nnoremap <C-x> ZZ
+
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
