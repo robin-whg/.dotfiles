@@ -30,7 +30,7 @@ set laststatus=2                        " Always display the status line
 set number                              " Line numbers
 set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
-set showtabline=2                       " Always show tabs
+set showtabline=1                       
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
@@ -46,8 +46,8 @@ cmap w!! :SudaWrite
 " Buffer Navigation
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
 nnoremap <C-l> <C-^>
-nnoremap <C-n> :buffern <CR>
-nnoremap <C-p> :bufferp <CR>
+nnoremap <C-n> :bnext <CR>
+nnoremap <C-p> :bprev <CR>
 
 " Esc to jk
 imap jk <Esc>
