@@ -41,13 +41,15 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 set autochdir                           " Your working directory will always be the same as your working directory
 
 " You can't stop me
-cmap w!! :SudaWrite
+cmap <leader>S :SudaWrite <CR>
 
 " Buffer Navigation
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
-nnoremap <C-l> <C-^>
 nnoremap <C-n> :bnext <CR>
 nnoremap <C-p> :bprev <CR>
+
+
+
 
 " Esc to jk
 imap jk <Esc>
@@ -69,7 +71,7 @@ nnoremap <M-l>    :vertical resize +2<CR>
 
 " Alternate way to save
 nnoremap <C-s> :w<CR>
-nnoremap <C-x> ZZ
+nnoremap <C-x> :bd<CR>
 
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -102,19 +104,32 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
     Plug 'itchyny/lightline.vim'
     " Tmux Navigation
     Plug 'christoomey/vim-tmux-navigator'
+    " NerdTree
+    Plug 'preservim/nerdtree'
+    Plug 'ryanoasis/vim-devicons'
 
-call plug#end()
+    call plug#end()
 
 colorscheme nord
 
-" lightline
-  let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'gitbranch#name'
-      \ },
-      \ }
+let NERDTreeMinimalUI=1
+if exists("g:loaded_webdevicons")
+  call webdevicons#refresh()
+endif
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+
+let g:lightline = {
+    \ 'colorscheme': 'nord',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'gitbranch#name'
+    \ },
+    \ }
