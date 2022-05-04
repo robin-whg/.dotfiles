@@ -7,7 +7,7 @@ alias tm="tmux"
 
 # Auto start Tmux
 if [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
+    tmux attach || tmux new -s Session
 fi
 
 # History
