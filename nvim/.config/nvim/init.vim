@@ -1,13 +1,6 @@
-let g:mapleader = "\<Space>"
-
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
-" auto resize to equal widths
-autocmd VimResized * wincmd =
-set equalalways
-
 syntax enable                           " Enables syntax highlighing
-set termguicolors
 set hidden                              " Required to keep multiple buffers open
 set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed
@@ -30,7 +23,6 @@ set laststatus=2                        " Always display the status line
 set number                              " Line numbers
 set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
-set showtabline=1                       
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
@@ -39,89 +31,61 @@ set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set formatoptions=c                     " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set autochdir                           " Your working directory will always be the same as your working directory
+set equalalways                         " Auto resize tabs
+autocmd VimResized * wincmd =
 
-" You can't stop me
-cmap <leader>S :SudaWrite <CR>
-
-" Buffer Navigation
-nnoremap <Leader>b :buffers<CR>:buffer<Space>
+" Leader keys
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
+" Buffer navigation
 nnoremap <C-n> :bnext <CR>
 nnoremap <C-p> :bprev <CR>
-
-
-
-
-" Esc to jk
-imap jk <Esc>
-
-" new empty tab
-nnoremap <C-t> :tabnew <CR>
-
-" Better nav for omnicomplete
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
-
 " Use alt + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
 nnoremap <M-k>    :resize +2<CR>
 nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
-
-
-
 " Alternate way to save
 nnoremap <C-s> :w<CR>
 nnoremap <C-x> :bd<CR>
-
-" <TAB>: completion.
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
+" Better nav for omnicomplete
+inoremap <expr> <c-j> ("\<C-n>")
+inoremap <expr> <c-k> ("\<C-p>")
+" Exit instert
+imap jk <Esc>
 
-" auto-install vim-plug
+" Plugins
 if empty(glob('$HOME/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall
-  "autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 call plug#begin('$HOME/.config/nvim/autoload/plugged')
 
     Plug 'lambdalisue/suda.vim'
-    " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
-    " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
-    " Theme
     Plug 'arcticicestudio/nord-vim'
-    " Plug 'dracula/vim',{'as': 'dracula'}
-    " Git status
     Plug 'itchyny/vim-gitbranch'
-    " Statusbar
     Plug 'itchyny/lightline.vim'
-    " Tmux Navigation
     Plug 'christoomey/vim-tmux-navigator'
-    " NerdTree
     Plug 'preservim/nerdtree'
     Plug 'ryanoasis/vim-devicons'
 
-    call plug#end()
+call plug#end()
 
 colorscheme nord
 
 let NERDTreeMinimalUI=1
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 if exists("g:loaded_webdevicons")
   call webdevicons#refresh()
 endif
-" Start NERDTree. If a file is specified, move the cursor to its window.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-
 
 let g:lightline = {
     \ 'colorscheme': 'nord',
@@ -133,3 +97,4 @@ let g:lightline = {
     \   'gitbranch': 'gitbranch#name'
     \ },
     \ }
+
