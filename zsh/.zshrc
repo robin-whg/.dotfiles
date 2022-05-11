@@ -1,12 +1,11 @@
 export PATH="$HOME/.local/bin:$PATH"
 
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=lvim
+export VISUAL=lvim
 export BROWSER=brave
 
-alias vi="nvim"
-alias tm="tmux"
 alias lv="lvim"
+alias tm="tmux"
 
 # auto start Tmux
 if [ -z "$TMUX" ]; then
