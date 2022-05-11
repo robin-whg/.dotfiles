@@ -54,12 +54,12 @@ imap jk <Esc>
 imap kj <Esc>
 
 " Plugins
-if empty(glob('$HOME/.config/nvim/autoload/plug.vim'))
+if empty(glob('$HOME/.config/nvim/plugin/plug.vim'))
   silent !curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
-call plug#begin('$HOME/.config/nvim/autoload/plugged')
+call plug#begin('$HOME/.config/nvim/plugin/plugged')
   Plug 'folke/tokyonight.nvim'
   Plug 'sheerun/vim-polyglot'
   Plug 'jiangmiao/auto-pairs'

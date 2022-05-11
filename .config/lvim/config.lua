@@ -11,7 +11,7 @@ lvim.colorscheme = "tokyonight"
 lvim.builtin.bufferline.options.always_show_bufferline = true
 lvim.builtin.telescope.defaults.prompt_prefix = "> "
 lvim.builtin.telescope.defaults.selection_caret = "> "
-
+lvim.builtin.nvimtree.setup.renderer.indent_markers.enable = true
 -- keymappings [view all the defaults by pressing <leader>Lk]
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false

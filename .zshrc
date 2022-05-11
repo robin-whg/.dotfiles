@@ -59,8 +59,8 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
 # Plugins
-if [ ! -d "$HOME/.config/zsh/antigen" ]; then
-   git clone https://github.com/zsh-users/antigen.git $HOME/.config/zsh/antigen
+if [ ! -d "$HOME/.config/zsh/plugin" ]; then
+   git clone https://github.com/zsh-users/antigen.git $HOME/.config/zsh/plugin
 fi
 
 source $HOME/.config/zsh/antigen/antigen.zsh
