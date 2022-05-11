@@ -1,13 +1,16 @@
+export PATH="$HOME/.local/bin:$PATH"
+
 export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=brave
 
 alias vi="nvim"
 alias tm="tmux"
+alias lv="lvim"
 
 # auto start Tmux
 if [ -z "$TMUX" ]; then
-    tmux attach || tmux new -s Session
+    tmux attach || tmux new -s 0
 fi
 
 function ranger {
