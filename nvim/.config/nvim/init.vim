@@ -23,7 +23,7 @@ set laststatus=2                        " Always display the status line
 set number                              " Line numbers
 set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
-set noshowmode                          " We don't need to see things like -- INSERT -- anymore
+" set noshowmode                          We don't need to see things like -- INSERT -- anymore
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
 set updatetime=300                      " Faster completion
@@ -36,7 +36,6 @@ autocmd VimResized * wincmd =
 
 " Leader keys
 let g:mapleader = "\<Space>"
-let g:maplocalleader = ','
 " Buffer navigation
 nnoremap <C-n> :bnext <CR>
 nnoremap <C-p> :bprev <CR>
@@ -47,15 +46,12 @@ nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 " Alternate way to save
 nnoremap <C-s> :w<CR>
-nnoremap <C-x> :bd<CR>
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
-" Better nav for omnicomplete
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
 " Exit instert
 imap jk <Esc>
+imap kj <Esc>
 
 " Plugins
 if empty(glob('$HOME/.config/nvim/autoload/plug.vim'))
@@ -64,37 +60,11 @@ if empty(glob('$HOME/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('$HOME/.config/nvim/autoload/plugged')
-
-    Plug 'lambdalisue/suda.vim'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'arcticicestudio/nord-vim'
-    Plug 'itchyny/vim-gitbranch'
-    Plug 'itchyny/lightline.vim'
-    Plug 'christoomey/vim-tmux-navigator'
-    Plug 'preservim/nerdtree'
-    Plug 'ryanoasis/vim-devicons'
+  Plug 'folke/tokyonight.nvim'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
-colorscheme nord
-
-let NERDTreeMinimalUI=1
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-if exists("g:loaded_webdevicons")
-  call webdevicons#refresh()
-endif
-
-let g:lightline = {
-    \ 'colorscheme': 'nord',
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'gitbranch#name'
-    \ },
-    \ }
-
+let g:tokyonight_style = "night"
+colorscheme tokyonight
