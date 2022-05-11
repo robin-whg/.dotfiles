@@ -1,2 +1,4 @@
-nvim/.config/nvim/autoload
-tmux/.config/tmux/plugins
+.DS_Store
+**/plugin
+**/plugins
+**/autoload
