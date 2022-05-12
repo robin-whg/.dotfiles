@@ -39,60 +39,33 @@ lvim.builtin.telescope.defaults.mappings = {
 }
 
 -- Use which-key to add extra bindings with the leader-key prefix
-lvim.builtin.which_key.mappings["P"] = {
-  "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects"
-}
+lvim.builtin.which_key.mappings.c = nil
+lvim.builtin.which_key.mappings.x = { "<cmd>BufferKill<CR>", "Close Buffer" }
 
-lvim.builtin.which_key.mappings["x"] = {
-  "<cmd>BufferKill<CR>", "Close Buffer"
-}
-
-lvim.builtin.which_key.mappings["c"] = {
-}
-lvim.builtin.which_key.mappings["b"] = {
-  "<cmd>BufferLineCyclePrev<cr>", "Last Buffer"
-}
-lvim.builtin.which_key.mappings["B"] = {
-  name = "+Buffers",
-  j = { "<cmd>BufferLinePick<cr>", "Jump" },
-  f = { "<cmd>Telescope buffers<cr>", "Find" },
-  b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
-  -- w = { "<cmd>BufferWipeout<cr>", "Wipeout" }, -- TODO: implement this for bufferline
-  e = {
-    "<cmd>BufferLinePickClose<cr>",
-    "Pick which buffer to close",
-  },
-  h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
-  l = {
-    "<cmd>BufferLineCloseRight<cr>",
-    "Close all to the right",
-  },
-  D = {
-    "<cmd>BufferLineSortByDirectory<cr>",
-    "Sort by directory",
-  },
-  L = {
-    "<cmd>BufferLineSortByExtension<cr>",
-    "Sort by language",
-  },
-}
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
--- }
-
+lvim.builtin.which_key.mappings.q = { "<cmd>:conf qa<CR>", "Quit" }
 
 lvim.builtin.which_key.mappings["t"] = {
-  name = "+ToDo",
-  t = { "<cmd>TodoQuickFix<cr>", "All ToDos" },
-  f = { "<cmd>TodoTelescope<cr>", "Search ToDos" },
+  name = "Terminal",
 }
+
+lvim.builtin.terminal.execs = {
+  { "lazygit", "<leader>gg", "lazygit", "float" },
+  { "zsh", "<leader>tt", "terminal", "float" },
+  { "htop", "<leader>th", "htop", "float" },
+  { "gotop", "<leader>tg", "gotop", "float" },
+  { "lazydocker", "<leader>td", "lazydocker", "float" },
+  { "ranger", "<leader>tr", "ranger", "float" },
+  { "node", "<leader>tn", "node", "float" },
+}
+-- lvim.builtin.which_key.mappings["P"] = {
+--   "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects"
+-- }
+-- lvim.builtin.which_key.mappings["t"] = {
+--   name = "+ToDo",
+--   t = { "<cmd>TodoQuickFix<cr>", "All ToDos" },
+--   f = { "<cmd>TodoTelescope<cr>", "Search ToDos" },
+--   g = { "<cmd>TodoTelescope<cr>", "Search ToDos" },
+-- }
 
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
@@ -121,6 +94,20 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
+lvim.builtin.treesitter = {
+  rainbow = {
+    enable = true,
+    colors = {
+      "#f7768e",
+      "#9ece6a",
+      "#e0af68",
+      "#7aa2f7",
+      "#bb9af7",
+      "#7dcfff",
+      "#a9b1d6",
+    }
+  },
+}
 -- generic LSP settings
 
 -- ---@usage disable automatic installation of servers
@@ -222,20 +209,6 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
-}
-
-lvim.builtin.treesitter = {
-  rainbow = {
-    enable = true,
-    colors = {
-      "#f7768e",
-      "#9ece6a",
-      "#e0af68",
-      "#7aa2f7",
-      "#bb9af7",
-      "#7dcfff",
-      "#a9b1d6",
-    }
   {
     'wfxr/minimap.vim',
     run = "cargo install --locked code-minimap",
@@ -250,5 +223,5 @@ lvim.builtin.treesitter = {
 }
 
 lvim.autocommands.custom_groups = {
-  { "BufEnter", "*", "++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif" }
+  { "BufEnter", "*", "++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif" },
 }
