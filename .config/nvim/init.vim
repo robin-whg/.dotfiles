@@ -23,7 +23,6 @@ set laststatus=2                        " Always display the status line
 set number                              " Line numbers
 set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
-" set noshowmode                          We don't need to see things like -- INSERT -- anymore
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
 set updatetime=300                      " Faster completion
@@ -52,19 +51,3 @@ vnoremap > >gv
 " Exit instert
 imap jk <Esc>
 imap kj <Esc>
-
-" Plugins
-if empty(glob('$HOME/.config/nvim/plugin/plug.vim'))
-  silent !curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-endif
-
-call plug#begin('$HOME/.config/nvim/plugin/plugged')
-  Plug 'folke/tokyonight.nvim'
-  Plug 'sheerun/vim-polyglot'
-  Plug 'jiangmiao/auto-pairs'
-
-call plug#end()
-
-let g:tokyonight_style = "night"
-colorscheme tokyonight
