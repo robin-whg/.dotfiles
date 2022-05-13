@@ -63,7 +63,7 @@ if [ ! -d "$HOME/.config/zsh/plugin" ]; then
    git clone https://github.com/zsh-users/antigen.git $HOME/.config/zsh/plugin
 fi
 
-source $HOME/.config/zsh/antigen/antigen.zsh
+source $HOME/.config/zsh/plugin/antigen.zsh
 
 antigen bundle jeffreytse/zsh-vi-mode
 
