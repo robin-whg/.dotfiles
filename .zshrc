@@ -6,6 +6,8 @@ export BROWSER=brave
 
 alias lv="lvim"
 alias tm="tmux"
+alias lg="lazygit"
+alias ld="docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker"
 
 # auto start Tmux
 if [ -z "$TMUX" ]; then
