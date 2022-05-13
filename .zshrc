@@ -2,7 +2,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export EDITOR=lvim
 export VISUAL=lvim
-export BROWSER=brave
+export BROWSER=firefox
 
 alias lv="lvim"
 alias tm="tmux"
