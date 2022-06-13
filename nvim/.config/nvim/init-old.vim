@@ -33,21 +33,47 @@ set autochdir                           " Your working directory will always be 
 set equalalways                         " Auto resize tabs
 autocmd VimResized * wincmd =
 
+
+
+
 " Leader keys
 let g:mapleader = "\<Space>"
+" Exit insert
+imap jk <Esc>
 " Buffer navigation
 nnoremap <C-n> :bnext <CR>
 nnoremap <C-p> :bprev <CR>
+
+nnoremap <C-b> <C-^>
+" dont yank on x
+"yank to end of line
+nnoremap Y yg$ 
+
+" don't yank on x 
+nnoremap x "_x
+vnoremap p "_dP
+
+" used by tmux
+nnoremap <c-a> false
+
+" Save
+nnoremap <C-s> :w<CR>
+" CLose buffer
+nnoremap <C-x> :BufferClose<CR>
+
+" ignore node modules for file completion
+" set wildignore+=**/node_modules/**
+" pairs
+" j to gj
+nnoremap j gj
+nnoremap k gk
 " Use alt + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
 nnoremap <M-k>    :resize +2<CR>
 nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
-" Alternate way to save
-nnoremap <C-s> :w<CR>
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
-" Exit instert
-imap jk <Esc>
-imap kj <Esc>
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv

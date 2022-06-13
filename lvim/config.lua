@@ -1,8 +1,13 @@
--- general
-vim.opt.cmdheight = 1
+-- settings
 vim.opt.hlsearch = false
 vim.g.tokyonight_style = "night"
 vim.g.tokyonight_transparent_sidebar = true
+
+-- keybinds
+lvim.leader = "space"
+lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["Y"] = "yg$"
+lvim.keys.visual_mode["p"] = '"_dP'
 
 -- lvim config
 lvim.log.level = "warn"
@@ -18,8 +23,6 @@ lvim.builtin.nvimtree.setup.renderer.indent_markers.enable = true
 -- edit a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 
-lvim.leader = "space"
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
 local _, actions = pcall(require, "telescope.actions")
@@ -44,28 +47,8 @@ lvim.builtin.which_key.mappings.x = { "<cmd>BufferKill<CR>", "Close Buffer" }
 
 lvim.builtin.which_key.mappings.q = { "<cmd>:conf qa<CR>", "Quit" }
 
-lvim.builtin.which_key.mappings["t"] = {
-  name = "Terminal",
-}
-
-lvim.builtin.terminal.execs = {
-  { "lazygit", "<leader>gg", "lazygit", "float" },
-  { "zsh", "<leader>tt", "terminal", "float" },
-  { "htop", "<leader>th", "htop", "float" },
-  { "gotop", "<leader>tg", "gotop", "float" },
-  { "lazydocker", "<leader>td", "lazydocker", "float" },
-  { "ranger", "<leader>tr", "ranger", "float" },
-  { "node", "<leader>tn", "node", "float" },
-}
--- lvim.builtin.which_key.mappings["P"] = {
---   "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects"
--- }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+ToDo",
---   t = { "<cmd>TodoQuickFix<cr>", "All ToDos" },
---   f = { "<cmd>TodoTelescope<cr>", "Search ToDos" },
---   g = { "<cmd>TodoTelescope<cr>", "Search ToDos" },
--- }
+-- Use which-key to add extra bindings with the leader-key prefix
+lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
@@ -195,29 +178,6 @@ lvim.plugins = {
     event = "InsertEnter",
     config = function()
       require("nvim-ts-autotag").setup {}
-    end,
-  },
-  {
-    "folke/todo-comments.nvim",
-    event = "BufRead",
-    requires = "nvim-lua/plenary.nvim",
-    config = function()
-      require("todo-comments").setup {}
-    end
-  },
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  },
-  {
-    'wfxr/minimap.vim',
-    run = "cargo install --locked code-minimap",
-    -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
-    -- vim.cmd("let g:minimap_auto_start_win_enter = 1")
-    config = function()
-      vim.cmd("let g:minimap_width = 10")
-      vim.cmd("let g:minimap_auto_start = 1")
-      vim.cmd("let g:minimap_git_colors = 1")
     end,
   },
 }
