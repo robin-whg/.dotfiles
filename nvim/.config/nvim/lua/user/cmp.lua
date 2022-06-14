@@ -122,9 +122,8 @@ cmp.setup {
     select = false,
   },
   window = {
-    documentation = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-    },
+    documentation = cmp.config.window.bordered(), 
+    completion = cmp.config.window.bordered(), 
   },
   experimental = {
     ghost_text = false,
