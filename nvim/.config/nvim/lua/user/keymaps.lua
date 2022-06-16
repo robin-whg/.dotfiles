@@ -89,3 +89,4 @@ keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.git_files()<cr>", 
 keymap("x", "<C-_>", "<Plug>(comment_toggle_linewise_visual)", opts)
 keymap("n", "<C-_>", "<Plug>(comment_toggle_current_linewise)", opts)
 
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
