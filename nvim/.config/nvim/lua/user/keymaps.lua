@@ -83,4 +83,9 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Extension keymaps
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.git_files()<cr>", opts)
+
+keymap("x", "<C-_>", "<Plug>(comment_toggle_linewise_visual)", opts)
+keymap("n", "<C-_>", "<Plug>(comment_toggle_current_linewise)", opts)
+

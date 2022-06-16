@@ -45,6 +45,9 @@ return packer.startup(function(use)
   -- core plugins
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
+  -- Autopairs, integrates with both cmp and treesitter
+  use "windwp/nvim-autopairs"
+
   -- theme
   use "folke/tokyonight.nvim"
 
