@@ -1,0 +1,22 @@
+- LspInfo and Install border and border float ig
+- zen mode
+- spellcheck
+- telescope other functions
+- lsp auto install 
+- markdown preview 
+- open with system app (lsp???)
+- indent_blankline highlight current
+
+- prettier
+- eslint
+
+- disable comment next line
+- vimbar to display current file path/name
+- writing mode (treesitter twilight, zen mode, spellcheck, typewriter)
+- highlight same words
+- emmet
+- lazygit and lazydocker learn 
+- remap autopairs map = "<M-e>",
+- zsh branch icon
+- startify, dashboard, alpha
+- colorizer wrong colors
