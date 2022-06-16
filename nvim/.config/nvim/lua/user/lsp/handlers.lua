@@ -26,7 +26,7 @@ M.setup = function()
     float = {
       focusable = false,
       style = "minimal",
-      border = "solid",
+      border = "rounded",
       source = "always",
       header = "",
       prefix = "",
@@ -36,11 +36,11 @@ M.setup = function()
   vim.diagnostic.config(config)
 
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "solid",
+    border = "rounded",
   })
 
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = "solid",
+    border = "rounded",
   })
 end
 
@@ -79,7 +79,7 @@ local function lsp_keymaps(bufnr)
     '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<CR>',
     opts
   )
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "solid" })<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
