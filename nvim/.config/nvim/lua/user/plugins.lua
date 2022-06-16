@@ -42,6 +42,8 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
+  -- core plugins
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
   -- theme
   use "folke/tokyonight.nvim"
@@ -64,6 +66,17 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
   use "lukas-reineke/indent-blankline.nvim"
+
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"
+
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "p00f/nvim-ts-rainbow"
+  use "windwp/nvim-ts-autotag"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
