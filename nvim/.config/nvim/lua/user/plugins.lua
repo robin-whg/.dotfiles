@@ -47,8 +47,12 @@ return packer.startup(function(use)
 
   use "numToStr/Comment.nvim" -- Easily comment stuff
 
+  use "norcalli/nvim-colorizer.lua"
+
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
+
+  use "nvim-lualine/lualine.nvim"
 
   -- Autopairs, integrates with both cmp and treesitter
   use "windwp/nvim-autopairs"
