@@ -5,7 +5,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=firefox
 
-alias nv="nvim"
+alias vi="nvim"
 alias tm="tmux"
 alias lg="lazygit"
 alias ld="docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker"
@@ -42,7 +42,7 @@ autoload -Uz vcs_info
 precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
-PROMPT='%{$fg_bold[green]%}%n@%m %{$fg[cyan]%}%~ %{$fg[red]%}${vcs_info_msg_0_}%{$reset_color%}$ '
+PROMPT='%{$fg[blue]%}%n@%m %{$fg[cyan]%}%~ %{$fg[red]%} ${vcs_info_msg_0_}%{$fg[blue]%}$ '
 
 # General
 setopt autocd extendedglob
