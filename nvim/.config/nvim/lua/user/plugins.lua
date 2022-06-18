@@ -47,6 +47,8 @@ return packer.startup(function(use)
 
 	use("numToStr/Comment.nvim") -- Easily comment stuff
 
+	use("folke/which-key.nvim")
+
 	use("norcalli/nvim-colorizer.lua")
 
 	use("kyazdani42/nvim-web-devicons")
