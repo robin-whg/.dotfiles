@@ -6,11 +6,7 @@ M.setup = function()
 		{ name = "DiagnosticSignError", text = "" },
 		{ name = "DiagnosticSignWarn", text = "" },
 		{ name = "DiagnosticSignHint", text = "" },
-		{ name = "DiagnosticSignInfo", text = "" },
-		-- { name = "DiagnosticSignError", text = "" },
-		-- { name = "DiagnosticSignWarn", text = "" },
-		-- { name = "DiagnosticSignHint", text = "" },
-		-- { name = "DiagnosticSignInfo", text = "" },
+		-- { name = "DiagnosticSignInfo", text = "" },
 	}
 
 	for _, sign in ipairs(signs) do
@@ -83,11 +79,8 @@ local function lsp_keymaps(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev({})<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-	vim.cmd(
-		[[ command! Format execute 'lua vim.lsp.buf.format()' ]]
-		-- [[ command! Format execute 'lua vim.lsp.buf.format({ filter = function(client) return client.name == "null-ls" end, bufnr = bufnr, }) ' ]]
-	)
+	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format() ' ]])
 end
 
 M.on_attach = function(client, bufnr)
