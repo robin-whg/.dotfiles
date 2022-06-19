@@ -54,6 +54,8 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
 
+	use("RRethy/vim-illuminate")
+
 	use("nvim-lualine/lualine.nvim")
 
 	-- Autopairs, integrates with both cmp and treesitter
