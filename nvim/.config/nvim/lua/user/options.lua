@@ -39,7 +39,10 @@ local options = {
 }
 
 vim.opt.shortmess:append("c") -- don't shorten messages
--- vim.cmd [[FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o]] -- not working
+
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
 vim.cmd([[let g:netrw_banner=0]])
 -- vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.api.nvim_create_autocmd("BufEnter", {
