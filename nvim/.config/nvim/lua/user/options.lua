@@ -1,7 +1,7 @@
 local options = {
 	backup = false, -- creates a backup file
 	clipboard = "unnamedplus", -- allows neovim to access the system clipboard
-	cmdheight = 1, -- more space in the neovim command line for displaying messages
+	cmdheight = 2, -- more space in the neovim command line for displaying messages
 	completeopt = { "menuone", "noselect" }, -- mostly just for cmp
 	conceallevel = 0, -- so that `` is visible in markdown files
 	fileencoding = "utf-8", -- the encoding written to a file
@@ -39,20 +39,6 @@ local options = {
 }
 
 vim.opt.shortmess:append("c") -- don't shorten messages
-
-vim.cmd("autocmd BufEnter * set formatoptions-=cro")
-vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
-
-vim.cmd([[let g:netrw_banner=0]])
--- vim.opt.whichwrap:append("<,>,[,],h,l")
-vim.api.nvim_create_autocmd("BufEnter", {
-	nested = true,
-	callback = function()
-		if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
-			vim.cmd("quit")
-		end
-	end,
-})
 
 for k, v in pairs(options) do
 	vim.opt[k] = v
