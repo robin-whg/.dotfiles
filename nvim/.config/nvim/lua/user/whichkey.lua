@@ -10,6 +10,5 @@ whichkey.setup({
 })
 
 whichkey.register({
-	f = { "find" },
 	e = { "explorer" },
 }, { prefix = "<leader>" })
