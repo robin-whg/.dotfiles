@@ -1,22 +1,27 @@
-- LspInfo and Install border and border float ig
-- zen mode
-- spellcheck
+# Dotfiles
+
+## TODO
+
 - telescope other functions
-- lsp auto install 
-- markdown preview 
-- open with system app (lsp???)
-- indent_blankline highlight current
-
-- prettier
-- eslint
-
-- disable comment next line
-- vimbar to display current file path/name
-- writing mode (treesitter twilight, zen mode, spellcheck, typewriter)
-- highlight same words
+- lsp auto install
+- impatient
+- alpha
 - emmet
-- lazygit and lazydocker learn 
-- remap autopairs map = "<M-e>",
-- zsh branch icon
-- startify, dashboard, alpha
-- colorizer wrong colors
+- vimbar to display current file path/name
+- move scripts out of .zshrc
+- script to create tmux session for projects
+- markdown preview
+- zen Mode with spellcheck
+
+## Packages
+
+- xsel
+- python3, pip3, pynvim, sylua
+- node, npm, pnpm, prettier, eslint, eslint-config-prettier, neovim
+- neovim v8
+- tmux
+- zsh
+- lazygit, lazydocker
+- docker, docker compose
+- font with nerd icons
+- stow
