@@ -12,6 +12,10 @@
 - script to create tmux session for projects
 - markdown preview
 - zen Mode with spellcheck
+- open definition in split
+- keybind to switch between tmux sessions
+- better inc/dec
+- illuminate delay so it doesn't get triggered when scrolling
 
 ## Packages
 
