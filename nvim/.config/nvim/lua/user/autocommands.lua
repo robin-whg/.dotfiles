@@ -3,6 +3,8 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 vim.cmd([[let g:netrw_banner=0]])
 
+vim.cmd [[set iskeyword-=_]]
+
 vim.api.nvim_create_autocmd("BufEnter", {
 	nested = true,
 	callback = function()
