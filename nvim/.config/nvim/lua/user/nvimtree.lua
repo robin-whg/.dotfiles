@@ -3,6 +3,8 @@ if not status_ok then
 	return
 end
 
+local icons = require("user.icons")
+
 nvimTree.setup({ -- BEGIN_DEFAULT_OPTS
 	auto_reload_on_write = true,
 	create_in_closed_folder = false,
@@ -106,12 +108,12 @@ nvimTree.setup({ -- BEGIN_DEFAULT_OPTS
 	diagnostics = {
 		enable = true,
 		show_on_dirs = false,
-		-- icons = {
-		-- 	hint = "",
-		-- 	info = "",
-		-- 	warning = "",
-		-- 	error = "",
-		-- },
+		icons = {
+			hint = icons.diagnostics.Hint,
+			info = icons.diagnostics.Info,
+			warning = icons.diagnostics.Warning,
+			error = icons.diagnostics.Error,
+		},
 	},
 	filters = {
 		dotfiles = false,

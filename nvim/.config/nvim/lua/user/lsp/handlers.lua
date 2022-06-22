@@ -3,11 +3,12 @@ local M = {}
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 
 M.setup = function()
+	local icons = require("user.icons")
 	local signs = {
-		{ name = "DiagnosticSignError", text = "" },
-		{ name = "DiagnosticSignWarn", text = "" },
-		{ name = "DiagnosticSignHint", text = "" },
-		{ name = "DiagnosticSignInfo", text = "" },
+		{ name = "DiagnosticSignError", text = icons.diagnostics.Error },
+		{ name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
+		{ name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
+		{ name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
 	}
 
 	for _, sign in ipairs(signs) do
@@ -124,6 +125,7 @@ M.on_attach = function(client, bufnr)
 	-- if client.name == "tsserver" then
 	-- 	client.server_capabilities.document_formatting = false
 	-- end
+
 	local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 	if not status_cmp_ok then
 		return

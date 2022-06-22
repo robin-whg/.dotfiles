@@ -3,11 +3,18 @@ if not status_ok then
 	return
 end
 
+local icons = require("user.icons")
+
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn", "info", "hint" },
-	symbols = { error = " ", warn = " ", info = " ", hint = " " },
+	symbols = {
+		error = icons.diagnostics.Error .. " ",
+		warn = icons.diagnostics.Warning .. " ",
+		info = icons.diagnostics.Info .. " ",
+		hint = icons.diagnostics.Hint .. " ",
+	},
 	colored = false,
 	update_in_insert = false,
 	always_visible = true,
@@ -17,11 +24,6 @@ local branch = {
 	"branch",
 	icons_enabled = true,
 	icon = "",
-}
-
-local diff = {
-	"diff",
-	colored = false,
 }
 
 lualine.setup({
@@ -41,7 +43,6 @@ lualine.setup({
 			"mode",
 			branch,
 			diagnostics,
-			diff,
 		},
 		lualine_x = {
 			"filename",
