@@ -3,15 +3,12 @@
 ## TODO
 
 - telescope other functions
-- lsp auto install
 - impatient
 - alpha
-- emmet
 - move scripts out of .zshrc
 - script to create tmux session for projects
 - markdown preview
 - zen Mode with spellcheck
-- open definition in split
 - keybind to switch between tmux sessions
 - resize tmux windows
 - better inc/dec
@@ -20,6 +17,8 @@
 - renamer
 - Outline
 - todo comments
+- eslint!!!
+- toggle autoformat
 
 ## Packages
 
