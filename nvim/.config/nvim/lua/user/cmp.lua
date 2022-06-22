@@ -43,7 +43,6 @@ local kind_icons = {
 	Operator = "",
 	TypeParameter = "",
 }
--- find more here: https://www.nerdfonts.com/cheat-sheet
 
 cmp.setup({
 	snippet = {
@@ -101,11 +100,12 @@ cmp.setup({
 			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
-				nvim_lsp = "[LSP]",
-				nvim_lua = "[NVIM_LUA]",
-				luasnip = "[Snippet]",
-				buffer = "[Buffer]",
-				path = "[Path]",
+				nvim_lsp = "lsp",
+				nvim_lua = "lua",
+				luasnip = "luasnip",
+				buffer = "buffer",
+				path = "path",
+				emoji = "emoji",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -116,14 +116,21 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
+		{ name = "emoji" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
 	window = {
-		documentation = cmp.config.window.bordered(),
-		completion = cmp.config.window.bordered(),
+		documentation = {
+			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			winhighlight = "NormalFloat:Pmenu,NormalFloat:NormalFloat,CursorLine:PmenuSel,Search:None",
+		},
+		completion = {
+			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			winhighlight = "NormalFloat:Pmenu,NormalFloat:NormalFloat,CursorLine:PmenuSel,Search:None",
+		},
 	},
 	experimental = {
 		ghost_text = false,
