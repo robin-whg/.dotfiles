@@ -54,8 +54,6 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
 
-	use("RRethy/vim-illuminate")
-
 	use("nvim-lualine/lualine.nvim")
 
 	-- Autopairs, integrates with both cmp and treesitter
@@ -63,6 +61,19 @@ return packer.startup(function(use)
 
 	-- theme
 	use("folke/tokyonight.nvim")
+
+	-- Telescope
+	use("nvim-telescope/telescope.nvim")
+
+	use("lukas-reineke/indent-blankline.nvim")
+
+	-- Treesitter
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+	})
+	use("p00f/nvim-ts-rainbow")
+	use("windwp/nvim-ts-autotag")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -72,7 +83,6 @@ return packer.startup(function(use)
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
-	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("hrsh7th/cmp-emoji")
 
 	-- snippets
@@ -82,20 +92,10 @@ return packer.startup(function(use)
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
-	use("ray-x/lsp_signature.nvim")
-
-	use("lukas-reineke/indent-blankline.nvim")
-
-	-- Telescope
-	use("nvim-telescope/telescope.nvim")
-
-	-- Treesitter
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-	})
-	use("p00f/nvim-ts-rainbow")
-	use("windwp/nvim-ts-autotag")
+	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
+	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+	use("b0o/SchemaStore.nvim")
+	use("RRethy/vim-illuminate")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
