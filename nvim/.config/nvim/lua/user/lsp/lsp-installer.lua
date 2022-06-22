@@ -15,6 +15,7 @@ local servers = {
 	"pyright",
 	"yamlls",
 	"bashls",
+	"volar",
 }
 
 local settings = {
