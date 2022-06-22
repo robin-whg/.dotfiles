@@ -15,11 +15,11 @@ nvimTree.setup({ -- BEGIN_DEFAULT_OPTS
 	open_on_setup_file = false,
 	open_on_tab = false,
 	sort_by = "name",
-	update_cwd = true,
+	update_cwd = false,
 	reload_on_bufenter = false,
 	respect_buf_cwd = false,
 	view = {
-		adaptive_size = true,
+		adaptive_size = false,
 		centralize_selection = false,
 		width = 30,
 		height = 30,
@@ -38,7 +38,7 @@ nvimTree.setup({ -- BEGIN_DEFAULT_OPTS
 	},
 	renderer = {
 		add_trailing = false,
-		group_empty = false,
+		group_empty = true,
 		highlight_git = true,
 		full_name = false,
 		highlight_opened_files = "none",
@@ -94,7 +94,7 @@ nvimTree.setup({ -- BEGIN_DEFAULT_OPTS
 		auto_open = true,
 	},
 	update_focused_file = {
-		enable = false,
+		enable = true,
 		update_cwd = false,
 		ignore_list = {},
 	},
@@ -106,12 +106,12 @@ nvimTree.setup({ -- BEGIN_DEFAULT_OPTS
 	diagnostics = {
 		enable = true,
 		show_on_dirs = false,
-		icons = {
-			hint = "",
-			info = "",
-			warning = "",
-			error = "",
-		},
+		-- icons = {
+		-- 	hint = "",
+		-- 	info = "",
+		-- 	warning = "",
+		-- 	error = "",
+		-- },
 	},
 	filters = {
 		dotfiles = false,
@@ -124,7 +124,7 @@ nvimTree.setup({ -- BEGIN_DEFAULT_OPTS
 	},
 	git = {
 		enable = true,
-		ignore = true,
+		ignore = false,
 		timeout = 400,
 	},
 	actions = {
