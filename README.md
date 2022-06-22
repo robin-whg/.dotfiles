@@ -7,21 +7,25 @@
 - impatient
 - alpha
 - emmet
-- vimbar to display current file path/name
 - move scripts out of .zshrc
 - script to create tmux session for projects
 - markdown preview
 - zen Mode with spellcheck
 - open definition in split
 - keybind to switch between tmux sessions
+- resize tmux windows
 - better inc/dec
-- illuminate delay so it doesn't get triggered when scrolling
+- smart quit
+- neoscroll
+- renamer
+- Outline
+- todo comments
 
 ## Packages
 
 - xsel
-- python3, pip3, pynvim, sylua
-- node, npm, pnpm, prettier, eslint, eslint-config-prettier, neovim
+- python3, pip3, pynvim, black
+- node, npm, pnpm, prettier, eslint_d, eslint-config-prettier, neovim
 - neovim v8
 - tmux
 - zsh
@@ -29,3 +33,4 @@
 - docker, docker compose
 - font with nerd icons
 - stow
+- rust, cargo, stylua
