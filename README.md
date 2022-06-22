@@ -19,6 +19,7 @@
 - todo comments
 - eslint!!!
 - toggle autoformat
+- better git integration
 
 ## Packages
 
