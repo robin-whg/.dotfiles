@@ -120,6 +120,10 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
+	-- useless cause null-ls always takes precedence???
+	-- if client.name == "tsserver" then
+	-- 	client.server_capabilities.document_formatting = false
+	-- end
 	local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 	if not status_cmp_ok then
 		return
@@ -131,9 +135,10 @@ M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
 end
+
 -- M.on_attach = function(client, bufnr)
 -- 	if client.name == "tsserver" then
--- 		client.resolved_capabilities.document_formatting = false
+-- 		client.server_capabilities.document_formatting = false
 -- 	end
 -- 	lsp_keymaps(bufnr)
 -- 	lsp_highlight_document(client)
