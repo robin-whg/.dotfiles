@@ -35,9 +35,9 @@ local options = {
 	autoindent = true, -- good auto indent
 	showmode = false, -- we don't need to see things like -- INSERT -- anymore
 	laststatus = 2, -- always display statusline
-	-- showtabline = 2, -- always show tabs
 }
 
+-- don't give `ins-completion-menu` messages.
 vim.opt.shortmess:append("c") -- don't shorten messages
 
 for k, v in pairs(options) do
