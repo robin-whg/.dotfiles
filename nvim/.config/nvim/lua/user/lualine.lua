@@ -5,6 +5,45 @@ end
 
 local icons = require("user.icons")
 
+local lsp = {
+	function()
+		-- msg = msg or "LS Inactive"
+		local buf_clients = vim.lsp.buf_get_clients()
+		if next(buf_clients) == nil then
+			-- TODO: clean up this if statement
+			-- if type(msg) == "boolean" or #msg == 0 then
+			return "LS Inactive"
+			-- end
+			-- return msg
+		end
+		-- local buf_ft = vim.bo.filetype
+		local buf_client_names = {}
+
+		-- add client
+		for _, client in pairs(buf_clients) do
+			if client.name ~= "null-ls" then
+				table.insert(buf_client_names, client.name)
+			end
+		end
+
+		-- add formatter
+		-- local formatters = require("null-ls.info").get_active_sources()
+		-- local test = "test"
+		-- local supported_formatters = formatters.list_registered(buf_ft)
+		-- local formatters = require("null-ls.info").get_active_sources()
+		-- vim.list_extend(buf_client_names, formatters)
+		--
+		-- add linter
+		-- local linters = require("lvim.lsp.null-ls.linters")
+		-- local supported_linters = linters.list_registered(buf_ft)
+		-- vim.list_extend(buf_client_names, supported_linters)
+
+		local unique_client_names = vim.fn.uniq(buf_client_names)
+		return "[" .. table.concat(unique_client_names, ", ") .. "]"
+	end,
+	color = { gui = "bold" },
+}
+
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
@@ -45,6 +84,7 @@ lualine.setup({
 			diagnostics,
 		},
 		lualine_x = {
+			lsp,
 			"filename",
 			"encoding",
 			"filetype",
