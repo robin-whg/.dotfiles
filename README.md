@@ -3,7 +3,6 @@
 ## TODO
 
 - telescope other functions
-- impatient
 - alpha
 - move scripts out of .zshrc
 - script to create tmux session for projects
@@ -34,3 +33,4 @@
 - font with nerd icons
 - stow
 - rust, cargo, stylua
+- ripgrep
