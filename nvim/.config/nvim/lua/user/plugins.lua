@@ -56,6 +56,8 @@ return packer.startup(function(use)
 
 	use("nvim-lualine/lualine.nvim")
 
+	use("lewis6991/impatient.nvim")
+
 	-- Autopairs, integrates with both cmp and treesitter
 	use("windwp/nvim-autopairs")
 
