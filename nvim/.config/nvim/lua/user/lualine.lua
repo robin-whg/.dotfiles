@@ -39,7 +39,7 @@ local lsp = {
 		-- vim.list_extend(buf_client_names, supported_linters)
 
 		local unique_client_names = vim.fn.uniq(buf_client_names)
-		return "[" .. table.concat(unique_client_names, ", ") .. "]"
+		return " " .. table.concat(unique_client_names, ", ")
 	end,
 	color = { gui = "bold" },
 }
@@ -47,12 +47,12 @@ local lsp = {
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
-	sections = { "error", "warn", "info", "hint" },
+	sections = { "error", "warn" },
 	symbols = {
 		error = icons.diagnostics.Error .. " ",
 		warn = icons.diagnostics.Warning .. " ",
-		info = icons.diagnostics.Info .. " ",
-		hint = icons.diagnostics.Hint .. " ",
+		-- info = icons.diagnostics.Info .. " ",
+		-- hint = icons.diagnostics.Hint .. " ",
 	},
 	colored = false,
 	update_in_insert = false,
@@ -62,7 +62,7 @@ local diagnostics = {
 local branch = {
 	"branch",
 	icons_enabled = true,
-	icon = "",
+	icon = " ",
 }
 
 lualine.setup({
@@ -82,13 +82,13 @@ lualine.setup({
 		},
 		lualine_c = {
 			branch,
-			diagnostics,
+			"filename",
 		},
 		lualine_x = {
+			diagnostics,
 			lsp,
-			"filename",
-			"encoding",
 			"filetype",
+			-- "encoding",
 			"location",
 			"%L",
 		},
