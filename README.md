@@ -2,7 +2,6 @@
 
 ## TODO
 
-- telescope other functions
 - alpha
 - move scripts out of .zshrc
 - script to create tmux session for projects
@@ -12,7 +11,6 @@
 - resize tmux windows
 - better inc/dec
 - smart quit
-- neoscroll
 - renamer
 - Outline
 - todo comments
