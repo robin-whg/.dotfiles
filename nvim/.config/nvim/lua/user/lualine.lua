@@ -77,9 +77,10 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {
+		lualine_b = {
 			"mode",
+		},
+		lualine_c = {
 			branch,
 			diagnostics,
 		},
