@@ -3,10 +3,13 @@ if not null_ls_status_ok then
 	return
 end
 
+local helpers = null_ls.helpers
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
--- local diagnostics = null_ls.builtins.diagnostics
+local diagnostics = null_ls.builtins.diagnostics
+
+local code_actions = null_ls.builtins.code_actions
 
 local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format({
@@ -22,10 +25,28 @@ end
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- add to your shared on_attach callback
+-- only use eslint if included in project, otherwise disable and fallback to prettier for formatting.
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({ extra_filetypes = { "toml", "solidity" }, extra_args = { "--no-semi" } }),
+		formatting.prettier.with({
+			extra_args = { "--no-semi" },
+		}),
+		diagnostics.eslint_d.with({
+			condition = function(utils)
+				return utils.root_has_file({ ".eslintrc" })
+			end,
+		}),
+		code_actions.eslint_d.with({
+			condition = function(utils)
+				return utils.root_has_file({ ".eslintrc" })
+			end,
+		}),
+		formatting.eslint_d.with({
+			condition = function(utils)
+				return utils.root_has_file({ ".eslintrc" })
+			end,
+		}),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
 	},
