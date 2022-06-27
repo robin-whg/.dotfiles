@@ -26,18 +26,6 @@ local lsp = {
 			end
 		end
 
-		-- add formatter
-		-- local formatters = require("null-ls.info").get_active_sources()
-		-- local test = "test"
-		-- local supported_formatters = formatters.list_registered(buf_ft)
-		-- local formatters = require("null-ls.info").get_active_sources()
-		-- vim.list_extend(buf_client_names, formatters)
-		--
-		-- add linter
-		-- local linters = require("lvim.lsp.null-ls.linters")
-		-- local supported_linters = linters.list_registered(buf_ft)
-		-- vim.list_extend(buf_client_names, supported_linters)
-
 		local unique_client_names = vim.fn.uniq(buf_client_names)
 		return " " .. table.concat(unique_client_names, ", ")
 	end,

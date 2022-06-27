@@ -40,33 +40,18 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-	-- My plugins here
 	use("wbthomason/packer.nvim") -- Have packer manage itself
-	-- core plugins
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
-
 	use("numToStr/Comment.nvim") -- Easily comment stuff
-
 	use("folke/which-key.nvim")
-
 	use("norcalli/nvim-colorizer.lua")
-
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
-
 	use("nvim-lualine/lualine.nvim")
-
 	use("lewis6991/impatient.nvim")
-
-	-- Autopairs, integrates with both cmp and treesitter
 	use("windwp/nvim-autopairs")
-
-	-- theme
 	use("folke/tokyonight.nvim")
-
-	-- Telescope
 	use("nvim-telescope/telescope.nvim")
-
 	use("lukas-reineke/indent-blankline.nvim")
 
 	-- Treesitter
