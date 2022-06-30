@@ -74,7 +74,7 @@ lualine.setup({
 		},
 		lualine_x = {
 			diagnostics,
-			lsp,
+			-- lsp,
 			"filetype",
 			-- "encoding",
 			"location",

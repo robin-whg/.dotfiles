@@ -8,7 +8,6 @@ local servers = {
 	"cssmodules_ls",
 	"dockerls",
 	"graphql",
-	"emmet_ls",
 	"html",
 	"jsonls",
 	"sumneko_lua",
@@ -19,6 +18,7 @@ local servers = {
 	"yamlls",
 	"bashls",
 	"volar",
+	-- "emmet_ls",
 }
 
 local settings = {
