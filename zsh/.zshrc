@@ -1,5 +1,4 @@
 export PATH="$HOME/.local/bin:$PATH"
-export PNPM_HOME="/home/robin/.local/share/pnpm"
 
 export EDITOR=nvim
 export VISUAL=nvim
@@ -86,6 +85,6 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 bindkey '^ ' autosuggest-accept
 
 # pnpm
-export PNPM_HOME="/Users/robin/Library/pnpm"
+export PNPM_HOME="/home/robin/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
