@@ -1,5 +1,4 @@
 export PATH="$HOME/.local/bin:$PATH"
-export PNPM_HOME="/home/robin/.local/share/pnpm"
 
 export EDITOR=nvim
 export VISUAL=nvim
@@ -9,11 +8,6 @@ alias vi="nvim"
 alias tm="tmux"
 alias lg="lazygit"
 alias ld="docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker"
-
-# auto start Tmux
-# if [ -z "$TMUX" ]; then
-#     tmux attach || tmux new -s default
-# fi
 
 function ranger {
     local IFS=$'\t\n'
@@ -62,14 +56,11 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
 # Plugins
-# Plugins
 if [ ! -d "$HOME/.config/zsh/plugins/antigen" ]; then
    git clone https://github.com/zsh-users/antigen.git $HOME/.config/zsh/plugins/antigen
 fi
 
 source $HOME/.config/zsh/plugins/antigen/antigen.zsh
-
-# ADOTDIR=$HOME/.config/zsh/plugins
 
 antigen bundle jeffreytse/zsh-vi-mode
 
@@ -86,6 +77,6 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 bindkey '^ ' autosuggest-accept
 
 # pnpm
-export PNPM_HOME="/Users/robin/Library/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
