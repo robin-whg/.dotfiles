@@ -1,5 +1,7 @@
 # Dotfiles
 
+- Fonts need to be moved manually to `~/.fonts`
+
 ## TODO
 
 - alpha

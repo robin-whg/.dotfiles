@@ -1,0 +1,280 @@
+{
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.cursorBlinking": "blink",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.smoothScrolling": true,
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.scrollbar.horizontalScrollbarSize": 0,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.suggest.matchOnWordStartOnly": false,
+  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.shellIntegration.enabled": true,
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.startupEditor": "none",
+  "workbench.list.smoothScrolling": true,
+  "workbench.layoutControl.enabled": false,
+  "workbench.productIconTheme": "fluent-icons",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "explorer.autoReveal": true,
+  "markdown.updateLinksOnFileMove.enabled": "always",
+  "security.workspace.trust.untrustedFiles": "open",
+  "breadcrumbs.enabled": false,
+  "telemetry.telemetryLevel": "off",
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.pullBeforeCheckout": true,
+  "git.ignoreRebaseWarning": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.packageManager": "pnpm",
+  "window.experimental.windowControlsOverlay.enabled": false,
+  "window.newWindowDimensions": "offset",
+  "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "markdown.validate.enabled": true,
+  "vim.leader": "space",
+  "vim.useSystemClipboard": true,
+  "vim.handleKeys": {
+    "<C-w>": false, // TODO: remap
+    "<C-a>": false, // increment number
+    "<C-x>": false, // decrement number
+    "<C-i>": false, // jump list back
+    "<C-o>": false, // jump list forward
+    "<C-b>": false, // down full page
+    "<C-f>": false // up full page
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { // next to J for join line 
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "lineBreakInsert"
+      ],
+      "silent": true
+    },
+    { // go to first char of line
+      "before": [
+        "H"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ]
+    },
+    { // go to last char of line
+      "before": [
+        "L"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ]
+    },
+    { // don't yank deleted char with x
+      "before": [
+        "x"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "x"
+      ]
+    },
+    { // yank that behaves behaves like C and D
+      "before": [
+        "Y"
+      ],
+      "after": [
+        "y",
+        "$"
+      ]
+    },
+    { // better navigation in paragraphs
+      "before": [
+        "j"
+      ],
+      "after": [
+        "g",
+        "j"
+      ]
+    },
+    {
+      "before": [
+        "k"
+      ],
+      "after": [
+        "g",
+        "k"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ]
+    },
+    /* goto keys */
+    {
+      "before": [
+        "g",
+        "d"
+      ],
+      "commands": [
+        "editor.action.revealDefinition"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "p"
+      ],
+      "commands": [
+        "editor.action.peekDefinition"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "t"
+      ],
+      "commands": [
+        "typescript.goToSourceDefinition"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        "editor.action.goToReferences"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "i"
+      ],
+      "commands": [
+        "editor.action.goToImplementation"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "f"
+      ],
+      "commands": [
+        "seito-openfile.openFileFromText"
+      ]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    { // easier edit mode exit
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    { // paste without yanking selection
+      "before": [
+        "p"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "d",
+        "P"
+      ]
+    },
+    { // move current selection
+      "before": [
+        "J"
+      ],
+      "commands": [
+        "editor.action.moveLinesDownAction"
+      ]
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.moveLinesUpAction"
+      ]
+    },
+    { // indent without deselect
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    }
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "eslint.format.enable": true,
+  "remote.SSH.remotePlatform": {
+    "176.9.0.6": "linux"
+  },
+  "cSpell.language": "de,en,lorem",
+  "cSpell.caseSensitive": false,
+  "cSpell.allowCompoundWords": true,
+  "cSpell.enabledLanguageIds": [
+    "markdown",
+    "plaintext",
+    "yml"
+  ],
+  "volar.icon.preview": false,
+  "volar.icon.splitEditors": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "todo-tree.general.enableFileWatcher": true,
+  "todo-tree.general.showActivityBarBadge": true,
+  "todo-tree.general.statusBar": "total",
+  "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+  "todo-tree.highlights.enabled": true,
+  "todo-tree.highlights.defaultHighlight": {
+    "icon": "alert",
+    "type": "text",
+    "foreground": "white",
+    "background": "#565f89",
+    "iconColour": "blue"
+  },
+  "catppuccin.accentColor": "blue",
+  "volar.autoCompleteRefs": true,
+  "window.titleBarStyle": "custom",
+}

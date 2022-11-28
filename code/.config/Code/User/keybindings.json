@@ -1,0 +1,160 @@
+[
+  // General
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.files.save",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "workbench.action.openPreviousEditorFromHistory",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+  },
+  // {
+  //   "key": "ctrl+i",
+  //   "command": "editor.action.triggerSuggest",
+  //   "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+  // },
+  {
+    "key": "ctrl+i",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  // Explorer
+  {
+    "key": "ctrl+n",
+    "command": "explorer.newFile",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.files.action.collapseExplorerFolders",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // {
+  //   "key": "delete",
+  //   "command": "deleteFile",
+  //   "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceMoveableToTrash && !explorerResourceReadonly && !inputFocus"
+  // },
+  // List Navigation
+  {
+    "key": "ctrl+j",
+    "command": "list.focusDown",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "list.focusUp",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "showNextParameterHint",
+    "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "showPrevParameterHint",
+    "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "when": "codeActionMenuVisible",
+    "command": "selectPrevCodeAction"
+  },
+  {
+    "key": "ctrl+j",
+    "when": "codeActionMenuVisible",
+    "command": "selectNextCodeAction"
+  },
+  // Window Navigation
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown",
+    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !listFocus && !codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp",
+    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !listFocus && !codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.previousPanelView",
+    "when": "panelFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.nextPanelView",
+    "when": "panelFocus"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-extension.vim_ctrl+o",
+    "when": "editorTextFocus && vim.active && vim.use<C-o> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-workbench.action.files.openLocalFile",
+    "when": "remoteFileDialogVisible"
+  },
+  // Sidebar Navigation
+  // {
+  //   "key": "ctrl+p",
+  //   "command": "workbench.action.previousSideBarView",
+  //   "when": "sideBarFocus"
+  // },
+  // {
+  //   "key": "ctrl+n",
+  //   "command": "workbench.action.nextSideBarView",
+  //   "when": "sideBarFocus"
+  // },
+]
