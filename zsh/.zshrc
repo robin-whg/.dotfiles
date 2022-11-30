@@ -4,8 +4,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=firefox
 
-alias vi="nvim"
-alias tm="tmux"
+alias bat="batcat"
 alias lg="lazygit"
 alias ld="docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker"
 
