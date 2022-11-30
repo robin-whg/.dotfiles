@@ -51,7 +51,7 @@
   "vim.leader": "space",
   "vim.useSystemClipboard": true,
   "vim.handleKeys": {
-    "<C-w>": false, // TODO: remap
+    "<C-w>": true, // TODO: remap
     "<C-a>": false, // increment number
     "<C-x>": false, // decrement number
     "<C-i>": false, // jump list back
@@ -73,16 +73,18 @@
       "before": [
         "H"
       ],
-      "commands": [
-        "workbench.action.previousEditor"
+      "after": [
+        "g",
+        "^",
       ]
     },
     { // go to last char of line
       "before": [
         "L"
       ],
-      "commands": [
-        "workbench.action.nextEditor"
+      "after": [
+        "g",
+        "$"
       ]
     },
     { // don't yank deleted char with x
