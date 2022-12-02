@@ -51,15 +51,42 @@
   "vim.leader": "space",
   "vim.useSystemClipboard": true,
   "vim.handleKeys": {
-    "<C-w>": true, // TODO: remap
+    "<C-w>": false, // TODO: remap
     "<C-a>": false, // increment number
-    "<C-x>": false, // decrement number
+    "<C-x>": true, // decrement number
     "<C-i>": true, // jump list back
     "<C-o>": true, // jump list forward
     "<C-b>": false, // down full page
     "<C-f>": false // up full page
   },
   "vim.normalModeKeyBindingsNonRecursive": [
+    { // next to J for join line 
+      "before": [
+        "C-x"
+      ],
+      "after": [
+        "C-w"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<tab>"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<s-tab>"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ],
+      "silent": true
+    },
     { // next to J for join line 
       "before": [
         "K"
