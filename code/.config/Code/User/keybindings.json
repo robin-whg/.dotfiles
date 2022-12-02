@@ -23,16 +23,6 @@
     "key": "ctrl+t",
     "command": "workbench.action.terminal.toggleTerminal",
   },
-  // {
-  //   "key": "ctrl+i",
-  //   "command": "editor.action.triggerSuggest",
-  //   "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-  // },
-  {
-    "key": "ctrl+i",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus"
-  },
   // Explorer
   {
     "key": "ctrl+n",
