@@ -199,6 +199,33 @@
     },
     {
       "before": [
+        "C-x"
+      ],
+      "after": [
+        "C-w"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<tab>"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<s-tab>"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ],
+      "silent": true
+    },
+    { // next to J for join line 
+      "before": [
         "K"
       ],
       "commands": [
