@@ -1,4 +1,5 @@
 {
+  "editor.cursorSurroundingLines": 8,
   "editor.fontFamily": "FiraCode Nerd Font",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
@@ -39,6 +40,7 @@
   "eslint.alwaysShowStatus": true,
   "eslint.packageManager": "pnpm",
   "window.experimental.windowControlsOverlay.enabled": false,
+  "window.commandCenter": false,
   "window.newWindowDimensions": "offset",
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
   "[jsonc]": {
@@ -48,24 +50,159 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "markdown.validate.enabled": true,
+  "whichkey.delay": 150,
+  "whichkey.sortOrder": "alphabetically",
+  "whichkey.bindings": [
+    {
+      "key": "c",
+      "name": "Toggle Centered Layout",
+      "type": "command",
+      "command": "workbench.action.toggleCenteredLayout"
+    },
+    {
+      "key": "z",
+      "name": "Toggle Zen Mode",
+      "type": "command",
+      "command": "workbench.action.toggleZenMode"
+    },
+    {
+      "key": "m",
+      "name": "+Markdown",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "l",
+          "name": "Expand Link",
+          "type": "command",
+          "command": "markdown-link-expander.expand"
+        },
+        {
+          "key": "b",
+          "name": "Toggle Bold",
+          "type": "command",
+          "command": "markdown.extension.editing.toggleBold"
+        },
+        {
+          "key": "i",
+          "name": "Toggle Italic",
+          "type": "command",
+          "command": "markdown.extension.editing.toggleItalic"
+        },
+        {
+          "key": "c",
+          "name": "Check Task List",
+          "type": "command",
+          "command": "markdown.extension.checkTaskList"
+        },
+      ]
+    },
+    {
+      "key": "f",
+      "name": "+Foam",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "t",
+          "name": "+Template",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "o",
+              "name": "Create New Note from Template",
+              "type": "command",
+              "command": "foam-vscode.create-note-from-template"
+            },
+            {
+              "key": "n",
+              "name": "Create new template",
+              "type": "command",
+              "command": "foam-vscode.create-new-template"
+            },
+          ]
+        },
+        {
+          "key": "n",
+          "name": "Create New Note",
+          "type": "command",
+          "command": "foam-vscode.create-note"
+        },
+        {
+          "key": "o",
+          "name": "Open Today's Note",
+          "type": "command",
+          "command": "foam-vscode.open-daily-note"
+        },
+        {
+          "key": "d",
+          "name": "Open Daily Note",
+          "type": "command",
+          "command": "foam-vscode.open-daily-note-for-date"
+        },
+        {
+          "key": "y",
+          "name": "Copy To Clipboard",
+          "type": "command",
+          "command": "foam-vscode.copy-without-brackets"
+        },
+        {
+          "key": "g",
+          "name": "Show Graph",
+          "type": "command",
+          "command": "foam-vscode.show-graph"
+        },
+      ]
+    }
+  ],
   "vim.leader": "space",
   "vim.useSystemClipboard": true,
   "vim.handleKeys": {
-    "<C-w>": true, // TODO: remap
+    "<C-w>": false, // TODO: remap
     "<C-a>": false, // increment number
-    "<C-x>": false, // decrement number
+    "<C-x>": true, // decrement number
     "<C-i>": true, // jump list back
     "<C-o>": true, // jump list forward
     "<C-b>": false, // down full page
     "<C-f>": false // up full page
   },
   "vim.normalModeKeyBindingsNonRecursive": [
-    { // next to J for join line 
+    {
+      "before": [
+        "<tab>"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ]
+    },
+    {
+      "before": [
+        "<shift+tab>"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ]
+    },
+    {
+      "before": [
+        "C-x"
+      ],
+      "after": [
+        "C-w"
+      ]
+    },
+    {
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "whichkey.show"
+      ]
+    },
+    {
       "before": [
         "K"
       ],
       "commands": [
-        "editor.showHover"
+        "editor.action.showHover"
       ],
       "silent": true
     },
@@ -74,8 +211,7 @@
         "H"
       ],
       "after": [
-        "g",
-        "^",
+        "^"
       ]
     },
     { // go to last char of line
@@ -83,7 +219,6 @@
         "L"
       ],
       "after": [
-        "g",
         "$"
       ]
     },
@@ -126,11 +261,10 @@
     },
     {
       "before": [
-        "<leader>",
-        "e"
+        ";",
       ],
-      "commands": [
-        "workbench.action.toggleSidebarVisibility"
+      "after": [
+        ":"
       ]
     },
     /* goto keys */
@@ -201,6 +335,14 @@
     },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "whichkey.show"
+      ]
+    },
     { // paste without yanking selection
       "before": [
         "p"
@@ -261,7 +403,6 @@
     "yml"
   ],
   "volar.icon.preview": false,
-  "volar.icon.splitEditors": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "todo-tree.general.enableFileWatcher": true,
@@ -272,11 +413,12 @@
   "todo-tree.highlights.defaultHighlight": {
     "icon": "alert",
     "type": "text",
-    "foreground": "white",
+    "foreground": "#fff",
     "background": "#565f89",
-    "iconColour": "blue"
   },
-  "catppuccin.accentColor": "blue",
   "volar.autoCompleteRefs": true,
-  "window.titleBarStyle": "custom",
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "markdownlint.run": "onSave",
+  "gutterpreview.showImagePreviewOnGutter": false,
+  "catppuccin.accentColor": "lavender",
 }

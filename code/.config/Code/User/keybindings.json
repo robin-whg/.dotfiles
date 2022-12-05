@@ -127,14 +127,9 @@
     "when": "panelFocus"
   },
   {
-    "key": "ctrl+o",
-    "command": "-extension.vim_ctrl+o",
-    "when": "editorTextFocus && vim.active && vim.use<C-o> && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+o",
-    "command": "-workbench.action.files.openLocalFile",
-    "when": "remoteFileDialogVisible"
+    "key": "ctrl+b",
+    "command": "-markdown.extension.editing.toggleBold",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
   },
   // Sidebar Navigation
   // {
