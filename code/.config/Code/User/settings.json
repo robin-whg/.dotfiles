@@ -448,4 +448,5 @@
   "markdownlint.run": "onSave",
   "gutterpreview.showImagePreviewOnGutter": false,
   "catppuccin.accentColor": "lavender",
+  "window.titleBarStyle": "custom",
 }
