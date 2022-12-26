@@ -4,5 +4,7 @@ if not status_ok then
 end
 
 indentblankline.setup({
+  enabled = true,
 	show_current_context = true,
+  colored_indent_levels = false,
 })

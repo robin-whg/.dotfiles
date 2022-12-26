@@ -51,6 +51,7 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 	use("windwp/nvim-autopairs")
 	use("folke/tokyonight.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("nvim-telescope/telescope.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 
