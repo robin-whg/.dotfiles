@@ -4,20 +4,8 @@
 
 ## TODO
 
-- alpha
-- move scripts out of .zshrc
-- script to create tmux session for projects
-- markdown preview
-- zen Mode with spellcheck
-- keybind to switch between tmux sessions
-- resize tmux windows
-- better inc/dec
-- smart quit
-- renamer
-- Outline
-- todo comments
-- toggle autoformat
-- better git integration
+- [ ] Tokyo Night Theme
+- [ ] No colors tmux config
 
 ## Packages
 
