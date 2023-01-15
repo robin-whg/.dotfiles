@@ -6,7 +6,7 @@
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+m",
+    "key": "ctrl+b",
     "command": "workbench.action.openPreviousEditorFromHistory",
     "when": "editorFocus"
   },
@@ -39,11 +39,11 @@
     "command": "workbench.files.action.collapseExplorerFolders",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
-  // {
-  //   "key": "delete",
-  //   "command": "deleteFile",
-  //   "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceMoveableToTrash && !explorerResourceReadonly && !inputFocus"
-  // },
+  {
+    "key": "delete",
+    "command": "deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceMoveableToTrash && !explorerResourceReadonly && !inputFocus"
+  },
   // List Navigation
   {
     "key": "ctrl+j",
@@ -126,20 +126,4 @@
     "command": "workbench.action.nextPanelView",
     "when": "panelFocus"
   },
-  {
-    "key": "ctrl+b",
-    "command": "-markdown.extension.editing.toggleBold",
-    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
-  },
-  // Sidebar Navigation
-  // {
-  //   "key": "ctrl+p",
-  //   "command": "workbench.action.previousSideBarView",
-  //   "when": "sideBarFocus"
-  // },
-  // {
-  //   "key": "ctrl+n",
-  //   "command": "workbench.action.nextSideBarView",
-  //   "when": "sideBarFocus"
-  // },
 ]

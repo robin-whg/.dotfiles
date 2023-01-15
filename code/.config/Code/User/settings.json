@@ -3,7 +3,7 @@
   "editor.fontFamily": "FiraCode Nerd Font",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
-  "editor.cursorBlinking": "blink",
+  "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.smoothScrolling": true,
   "editor.minimap.enabled": false,
@@ -11,16 +11,17 @@
   "editor.scrollbar.horizontalScrollbarSize": 0,
   "editor.bracketPairColorization.enabled": true,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.tabSize": 2,
   "editor.suggest.matchOnWordStartOnly": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.unicodeHighlight.nonBasicASCII": false,
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "terminal.integrated.gpuAcceleration": "on",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.shellIntegration.enabled": true,
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Tokyo Night Storm",
   "workbench.startupEditor": "none",
   "workbench.list.smoothScrolling": true,
   "workbench.layoutControl.enabled": false,
@@ -28,141 +29,46 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "explorer.autoReveal": true,
-  "markdown.updateLinksOnFileMove.enabled": "always",
-  "security.workspace.trust.untrustedFiles": "open",
+  "window.experimental.windowControlsOverlay.enabled": false,
+  "window.commandCenter": false,
+  "window.newWindowDimensions": "offset",
+  "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
+  "window.titleBarStyle": "custom",
   "breadcrumbs.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
   "telemetry.telemetryLevel": "off",
   "git.autofetch": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "git.pullBeforeCheckout": true,
   "git.ignoreRebaseWarning": true,
-  "eslint.alwaysShowStatus": true,
-  "eslint.packageManager": "pnpm",
-  "window.experimental.windowControlsOverlay.enabled": false,
-  "window.commandCenter": false,
-  "window.newWindowDimensions": "offset",
-  "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
+  "markdown.updateLinksOnFileMove.enabled": "always",
+  "markdown.validate.enabled": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "markdown.validate.enabled": true,
-  "whichkey.delay": 150,
-  "whichkey.sortOrder": "alphabetically",
-  "whichkey.bindings": [
-    {
-      "key": "c",
-      "name": "Toggle Centered Layout",
-      "type": "command",
-      "command": "workbench.action.toggleCenteredLayout"
-    },
-    {
-      "key": "z",
-      "name": "Toggle Zen Mode",
-      "type": "command",
-      "command": "workbench.action.toggleZenMode"
-    },
-    {
-      "key": "m",
-      "name": "+Markdown",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "l",
-          "name": "Expand Link",
-          "type": "command",
-          "command": "markdown-link-expander.expand"
-        },
-        {
-          "key": "b",
-          "name": "Toggle Bold",
-          "type": "command",
-          "command": "markdown.extension.editing.toggleBold"
-        },
-        {
-          "key": "i",
-          "name": "Toggle Italic",
-          "type": "command",
-          "command": "markdown.extension.editing.toggleItalic"
-        },
-        {
-          "key": "c",
-          "name": "Check Task List",
-          "type": "command",
-          "command": "markdown.extension.checkTaskList"
-        },
-      ]
-    },
-    {
-      "key": "f",
-      "name": "+Foam",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "t",
-          "name": "+Template",
-          "type": "bindings",
-          "bindings": [
-            {
-              "key": "o",
-              "name": "Create New Note from Template",
-              "type": "command",
-              "command": "foam-vscode.create-note-from-template"
-            },
-            {
-              "key": "n",
-              "name": "Create new template",
-              "type": "command",
-              "command": "foam-vscode.create-new-template"
-            },
-          ]
-        },
-        {
-          "key": "n",
-          "name": "Create New Note",
-          "type": "command",
-          "command": "foam-vscode.create-note"
-        },
-        {
-          "key": "o",
-          "name": "Open Today's Note",
-          "type": "command",
-          "command": "foam-vscode.open-daily-note"
-        },
-        {
-          "key": "d",
-          "name": "Open Daily Note",
-          "type": "command",
-          "command": "foam-vscode.open-daily-note-for-date"
-        },
-        {
-          "key": "y",
-          "name": "Copy To Clipboard",
-          "type": "command",
-          "command": "foam-vscode.copy-without-brackets"
-        },
-        {
-          "key": "g",
-          "name": "Show Graph",
-          "type": "command",
-          "command": "foam-vscode.show-graph"
-        },
-      ]
-    }
-  ],
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "Lua.telemetry.enable": false,
+  "volar.icon.preview": false,
+  "volar.autoCompleteRefs": true,
+  "eslint.format.enable": true,
   "vim.leader": "space",
   "vim.useSystemClipboard": true,
   "vim.handleKeys": {
-    "<C-w>": false, // TODO: remap
-    "<C-a>": false, // increment number
-    "<C-x>": true, // decrement number
-    "<C-i>": true, // jump list back
-    "<C-o>": true, // jump list forward
-    "<C-b>": false, // down full page
-    "<C-f>": false // up full page
+    "<C-w>": true,
+    "<C-o>": true,
+    "<C-i>": true,
+    "<C-a>": false,
+    "<C-x>": false,
+    "<C-b>": false,
+    "<C-f>": false,
   },
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -179,22 +85,6 @@
       ],
       "commands": [
         "workbench.action.previousEditor"
-      ]
-    },
-    {
-      "before": [
-        "C-x"
-      ],
-      "after": [
-        "C-w"
-      ]
-    },
-    {
-      "before": [
-        "<space>"
-      ],
-      "commands": [
-        "whichkey.show"
       ]
     },
     {
@@ -224,7 +114,7 @@
       ],
       "silent": true
     },
-    { // next to J for join line 
+    {
       "before": [
         "K"
       ],
@@ -233,7 +123,7 @@
       ],
       "silent": true
     },
-    { // go to first char of line
+    {
       "before": [
         "H"
       ],
@@ -241,7 +131,7 @@
         "^"
       ]
     },
-    { // go to last char of line
+    {
       "before": [
         "L"
       ],
@@ -268,7 +158,7 @@
         "$"
       ]
     },
-    { // better navigation in paragraphs
+    {
       "before": [
         "j"
       ],
@@ -362,14 +252,6 @@
     },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "<space>"
-      ],
-      "commands": [
-        "whichkey.show"
-      ]
-    },
     { // paste without yanking selection
       "before": [
         "p"
@@ -381,7 +263,7 @@
         "P"
       ]
     },
-    { // move current selection
+    {
       "before": [
         "J"
       ],
@@ -397,7 +279,7 @@
         "editor.action.moveLinesUpAction"
       ]
     },
-    { // indent without deselect
+    {
       "before": [
         ">"
       ],
@@ -414,13 +296,6 @@
       ]
     }
   ],
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "eslint.format.enable": true,
-  "remote.SSH.remotePlatform": {
-    "176.9.0.6": "linux"
-  },
   "cSpell.language": "de,en,lorem",
   "cSpell.caseSensitive": false,
   "cSpell.allowCompoundWords": true,
@@ -429,9 +304,6 @@
     "plaintext",
     "yml"
   ],
-  "volar.icon.preview": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "todo-tree.general.enableFileWatcher": true,
   "todo-tree.general.showActivityBarBadge": true,
   "todo-tree.general.statusBar": "total",
@@ -440,15 +312,10 @@
   "todo-tree.highlights.defaultHighlight": {
     "icon": "alert",
     "type": "text",
-    "foreground": "#fff",
-    "background": "#565f89",
+    "foreground": "#e0af68",
+    "background": "#e0af6825",
   },
-  "volar.autoCompleteRefs": true,
-  "editor.unicodeHighlight.nonBasicASCII": false,
-  "markdownlint.run": "onSave",
   "gutterpreview.showImagePreviewOnGutter": false,
-  "catppuccin.accentColor": "lavender",
-  "window.titleBarStyle": "custom",
   "gitdoc.autoPull": "off",
   "gitdoc.autoPush": "off",
 }
