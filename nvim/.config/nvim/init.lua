@@ -1,19 +1,23 @@
-require("user.impatient")
-require("user.options")
-require("user.autocommands")
-require("user.keymaps")
-require("user.plugins")
--- require("user.tokyonight")
-require("user.catppuccin")
-require("user.cmp")
--- require("user.lsp")
-require("user.telescope")
-require("user.treesitter")
-require("user.autopairs")
-require("user.comment")
-require("user.nvimtree")
-require("user.lualine")
-require("user.nvimcolorizer")
-require("user.indentblankline")
-require("user.whichkey")
-require("user.illuminate")
+require("config.options")
+require("config.keymaps")
+require("config.autocmds")
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+require("lazy").setup("plugins")
+
+vim.cmd.colorscheme "catppuccin"
