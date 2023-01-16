@@ -345,4 +345,18 @@
   "gutterpreview.showImagePreviewOnGutter": false,
   "gitdoc.autoPull": "off",
   "gitdoc.autoPush": "off",
+  "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "path": "zsh"
+    },
+    "tmux": {
+      "path": "zsh",
+      "icon": "terminal-tmux",
+      "args": [
+        "-c",
+        "tmux new-session -A -s code"
+      ]
+    },
+  },
+  "terminal.integrated.defaultProfile.linux": "tmux"
 }
