@@ -197,10 +197,10 @@
     {
       "before": [
         "g",
-        "p"
+        "D"
       ],
       "commands": [
-        "editor.action.peekDefinition"
+        "editor.action.revealDefinition"
       ]
     },
     {
@@ -209,7 +209,16 @@
         "t"
       ],
       "commands": [
-        "typescript.goToSourceDefinition"
+        "editor.action.goToTypeDefinition"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "T"
+      ],
+      "commands": [
+        "editor.action.peekTypeDefinition"
       ]
     },
     {
@@ -224,10 +233,28 @@
     {
       "before": [
         "g",
+        "R"
+      ],
+      "commands": [
+        "editor.action.referenceSearch.trigger"
+      ]
+    },
+    {
+      "before": [
+        "g",
         "i"
       ],
       "commands": [
         "editor.action.goToImplementation"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "I"
+      ],
+      "commands": [
+        "editor.action.peekImplementation"
       ]
     },
     {
