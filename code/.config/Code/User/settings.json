@@ -200,7 +200,7 @@
         "D"
       ],
       "commands": [
-        "editor.action.revealDefinition"
+        "editor.action.peekDefinition"
       ]
     },
     {
@@ -331,17 +331,6 @@
     "plaintext",
     "yml"
   ],
-  "todo-tree.general.enableFileWatcher": true,
-  "todo-tree.general.showActivityBarBadge": true,
-  "todo-tree.general.statusBar": "total",
-  "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
-  "todo-tree.highlights.enabled": true,
-  "todo-tree.highlights.defaultHighlight": {
-    "icon": "alert",
-    "type": "text",
-    "foreground": "#e0af68",
-    "background": "#e0af6825",
-  },
   "gutterpreview.showImagePreviewOnGutter": false,
   "gitdoc.autoPull": "off",
   "gitdoc.autoPush": "off",
@@ -358,5 +347,92 @@
       ]
     },
   },
-  "terminal.integrated.defaultProfile.linux": "tmux"
+  "terminal.integrated.defaultProfile.linux": "tmux",
+  "catppuccin.accentColor": "blue",
+  "todo-tree.general.enableFileWatcher": true,
+  "todo-tree.general.statusBar": "current file",
+  "todo-tree.general.statusBarClickBehaviour": "cycle",
+  "todo-tree.general.showIconsInsteadOfTagsInStatusBar": false,
+  //add markdown support
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "todo-tree.general.tags": [
+    "TODO", //todo
+    "NOTE", //note
+    "HACK", //hacky solution
+    "BUG", //broken bug location
+    "FIXME", //needs fixing but not a bug
+    "[x]", //done task
+    "[ ]", //incomplete task
+    "[f]", //failed task
+    "[c]", //cancelled task
+  ],
+  "todo-tree.highlights.defaultHighlight": {
+    "foreground": "#ed8796",
+    "background": "#ed8796",
+    "iconColour": "#ed8796",
+    "opacity": 25,
+    "icon": "check",
+    "type": "text",
+    "gutterIcon": true
+  },
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "foreground": "#eed49f",
+      "background": "#eed49f",
+      "iconColour": "#eed49f",
+      "icon": "plus-circle",
+    },
+    "NOTE": {
+      "foreground": "#a6da95",
+      "background": "#a6da95",
+      "iconColour": "#a6da95",
+      "icon": "book",
+    },
+    "HACK": {
+      "foreground": "#c6a0f6",
+      "background": "#c6a0f6",
+      "iconColour": "#c6a0f6",
+      "icon": "plug",
+    },
+    "BUG": {
+      "foreground": "#ed8796",
+      "background": "#ed8796",
+      "iconColour": "#ed8796",
+      "icon": "bug",
+    },
+    "FIXME": {
+      "foreground": "#f5a97f",
+      "background": "#f5a97f",
+      "iconColour": "#f5a97f",
+      "icon": "tools",
+    },
+    "[x]": { //complete
+      "foreground": "#a6da95",
+      "background": "#a6da95",
+      "iconColour": "#a6da95",
+      "icon": "check-circle-fill",
+      "type": "tag",
+    },
+    "[ ]": { //incomplete
+      "foreground": "#ed8796",
+      "background": "#ed8796",
+      "iconColour": "#ed8796",
+      "icon": "diamond",
+      "type": "tag",
+    },
+    "[f]": { //failed
+      "foreground": "#f5a97f",
+      "background": "#f5a97f",
+      "iconColour": "#f5a97f",
+      "icon": "eye-closed",
+      "type": "tag",
+    },
+    "[c]": { //cancelled
+      "foreground": "#eed49f",
+      "background": "#eed49f",
+      "iconColour": "#eed49f",
+      "icon": "diff-ignored",
+      "type": "tag",
+    },
+  },
 }
