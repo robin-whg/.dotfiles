@@ -28,8 +28,8 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Handle paragraphs better
-keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", opts)
-keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", opts)
+keymap('n', 'k', "gk", opts)
+keymap('n', 'j', "gj", opts)
 -- Easier command mode
 keymap("n", ";", ":", opts)
 -- Buffer Navigation
