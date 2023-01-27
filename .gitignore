@@ -2,3 +2,4 @@
 **/plugin
 **/plugins
 **/ignore
+**/*-lock.json
