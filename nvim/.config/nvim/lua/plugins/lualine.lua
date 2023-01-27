@@ -1,5 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
+  event = "VeryLazy",
   dependencies = {
     { "kyazdani42/nvim-web-devicons" }
   },
@@ -11,7 +12,7 @@ return {
     }
     require("lualine").setup({
       options = {
-        theme = "tokyonight",
+        theme = "catppuccin",
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = {},
