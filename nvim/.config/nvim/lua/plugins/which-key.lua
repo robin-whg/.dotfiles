@@ -19,7 +19,8 @@ return {
       },
     })
     wk.register({
-      ["<leader>f"] = { name = "Find" }
+      ["<leader>f"] = { name = "Find" },
+      ["<leader>c"] = { name = "Comment" }
     })
   end,
 }
