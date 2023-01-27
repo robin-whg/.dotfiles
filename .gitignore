@@ -1,5 +1,4 @@
 .DS_Store
 **/plugin
-**/plugins
 **/ignore
-**/*-lock.json
+nvim/**/lazy-lock.json
