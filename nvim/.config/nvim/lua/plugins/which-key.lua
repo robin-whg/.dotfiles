@@ -1,9 +1,11 @@
 return {
   "folke/which-key.nvim",
+  event = "VeryLazy",
   config = function()
+    local wk = require("which-key")
     vim.o.timeout = true
     vim.o.timeoutlen = 300
-    require("which-key").setup({
+    wk.setup({
       window = {
         border = "rounded", -- none, single, double, shadow
         position = "bottom", -- bottom, top
@@ -14,6 +16,10 @@ return {
       layout = {
         spacing = 1, -- spacing between columns
         align = "left", -- align columns left, center or right
-      },})
+      },
+    })
+    wk.register({
+      ["<leader>f"] = { name = "Find" }
+    })
   end,
 }
