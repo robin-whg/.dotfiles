@@ -7,10 +7,10 @@ return {
     vim.o.timeoutlen = 300
     wk.setup({
       window = {
-        border = "rounded", -- none, single, double, shadow
+        border = 'rounded', -- none, single, double, shadow
         position = "bottom", -- bottom, top
-        margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
-        padding = { 0, 0, 0, 0 }, -- extra window padding [top, right, bottom, left]
+        margin = { 0, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
+        padding = { 0, 0, 1, 0 }, -- extra window padding [top, right, bottom, left]
         winblend = 0
       },
       layout = {
@@ -20,7 +20,6 @@ return {
     })
     wk.register({
       ["<leader>f"] = { name = "Find" },
-      ["<leader>c"] = { name = "Comment" }
     })
   end,
 }
