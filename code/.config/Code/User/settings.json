@@ -435,4 +435,7 @@
       "type": "tag",
     },
   },
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
 }
