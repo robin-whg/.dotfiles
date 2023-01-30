@@ -26,7 +26,7 @@ return {
       select_prompts = false,
       view = {
         centralize_selection = false,
-        cursorline = true,
+        cursorline = false,
         debounce_delay = 15,
         width = 30,
         hide_root_folder = false,
@@ -244,25 +244,5 @@ return {
         },
       },
     })
-    local function open_nvim_tree(data)
-
-      -- buffer is a real file on the disk
-      local real_file = vim.fn.filereadable(data.file) == 1
-
-      -- buffer is a [No Name]
-      local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
-
-      if not real_file and not no_name then
-        return
-      end
-
-      -- open the tree but don't focus it
-      require("nvim-tree.api").tree.toggle({ focus = false })
-
-      -- find the file if it exists
-      require("nvim-tree.api").tree.find_file(data.file)
-    end
-
-    vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
   end
 }
