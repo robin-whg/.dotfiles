@@ -1,8 +1,17 @@
+-- return {
+-- 	diagnostics = {
+-- 		error = "",
+-- 		warning = "",
+-- 		info = "",
+-- 		hint = "",
+-- 	},
+-- }
 return {
 	diagnostics = {
-		Error = "",
-		Warning = "",
-		Info = "",
-		Hint = "",
+		error = "●",
+		warning = "●",
+		info = "●",
+		hint = "●",
 	},
+	circle = "●",
 }

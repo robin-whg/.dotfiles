@@ -59,10 +59,10 @@ return {
       manage_nvim_cmp = true,
       call_servers = 'local',
       sign_icons = {
-        error = icons.diagnostics.Error,
-        warn = icons.diagnostics.Warning,
-        hint = icons.diagnostics.Hint,
-        info = icons.diagnostics.Info,
+        error = icons.diagnostics.error,
+        warn = icons.diagnostics.warning,
+        hint = icons.diagnostics.hint,
+        info = icons.diagnostics.info,
       }
     })
 
@@ -104,7 +104,7 @@ return {
     lsp.setup()
 
     vim.diagnostic.config({
-      virtual_text = true,
+      virtual_text = { spacing = 4, prefix = icons.circle },
       signs = true,
       update_in_insert = false,
       underline = true,
