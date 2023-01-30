@@ -1,17 +1,15 @@
--- return {
--- 	diagnostics = {
--- 		error = "",
--- 		warning = "",
--- 		info = "",
--- 		hint = "",
--- 	},
--- }
 return {
 	diagnostics = {
-		error = "●",
-		warning = "●",
-		info = "●",
-		hint = "●",
+		error = "",
+		warning = "",
+		info = "",
+		hint = "",
 	},
 	circle = "●",
+  Gear = "",
+  NewFile = "",
+  FindFile = "",
+  FindText = "",
+  History = "",
+  Quit = ""
 }
