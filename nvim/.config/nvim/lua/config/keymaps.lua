@@ -25,6 +25,7 @@ keymap('n', 'j', "gj", opts)
 -- Easier command mode
 keymap("n", ";", ":", opts)
 -- Buffer Navigation
+keymap("n", "<C-n>", "<C-^>", opts)
 keymap("n", "Tab", ":bnext<CR>", opts)
 keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 -- Standard save
