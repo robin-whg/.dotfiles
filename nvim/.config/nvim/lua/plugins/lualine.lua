@@ -10,9 +10,10 @@ return {
       icons_enabled = true,
       icon = "",
     }
+
     require("lualine").setup({
       options = {
-        theme = "catppuccin",
+        theme = "tokyonight",
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = {},
