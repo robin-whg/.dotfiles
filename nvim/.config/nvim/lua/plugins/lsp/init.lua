@@ -126,11 +126,19 @@ return {
 					range = true,
 					desc = "Format using null-ls",
 				})
+
+				if client.supports_method("textDocument/formatting") then
+					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						group = augroup,
+						buffer = bufnr,
+						callback = format_cmd,
+					})
+				end
 			end,
 			sources = {
-				--- Replace these with the tools you have installed
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.prettier
+				null_ls.builtins.formatting.prettier,
 			},
 		})
 
