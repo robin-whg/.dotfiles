@@ -16,7 +16,7 @@ return {
         local buf_clients = vim.lsp.buf_get_clients()
         if next(buf_clients) == nil then
           if type(msg) == "boolean" or #msg == 0 then
-            return "LS Inactive"
+            return "[LS Inactive]"
           end
           return msg
         end
