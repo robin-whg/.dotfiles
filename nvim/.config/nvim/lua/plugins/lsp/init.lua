@@ -112,6 +112,13 @@ return {
 			on_attach = function(client, bufnr)
 				null_opts.on_attach(client, bufnr)
 
+				-- Disable LSP server formatting, to prevent formatting twice.
+				-- Once by the LSP server, second time by NULL-ls.
+				if client.name == "volar" or client.name == "tsserver" then
+					client.server_capabilities.documentFormattingProvider = false
+					client.server_capabilities.documentFormattingRangeProvider = false
+				end
+
 				local format_cmd = function(input)
 					vim.lsp.buf.format({
 						id = client.id,
@@ -138,7 +145,10 @@ return {
 			end,
 			sources = {
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.formatting.prettierd,
+				null_ls.builtins.code_actions.eslint_d.with({ only_local = "node_modules/.bin" }),
+				null_ls.builtins.diagnostics.eslint_d.with({ only_local = "node_modules/.bin" }),
+				null_ls.builtins.formatting.eslint_d.with({ only_local = "node_modules/.bin" }),
 			},
 		})
 
