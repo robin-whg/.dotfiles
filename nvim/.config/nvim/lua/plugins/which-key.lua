@@ -19,11 +19,11 @@ return {
 			},
 		})
 		wk.register({
-			["<leader>f"] = { name = "find" },
-			["<leader>fc"] = { name = "find command" },
-			["<leader>g"] = { name = "git" },
-			["<leader>gh"] = { name = "hunk" },
-			["<leader>c"] = { name = "code" },
+			["<leader>f"] = { name = "Find" },
+			["<leader>fc"] = { name = "Find command" },
+			["<leader>g"] = { name = "Git" },
+			["<leader>gh"] = { name = "Hunk" },
+			["<leader>c"] = { name = "Code" },
 		})
 	end,
 }

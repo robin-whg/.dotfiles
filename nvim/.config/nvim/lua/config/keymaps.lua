@@ -20,8 +20,8 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Handle paragraphs better
-keymap('n', 'k', "gk", opts)
-keymap('n', 'j', "gj", opts)
+keymap("n", "k", "gk", opts)
+keymap("n", "j", "gj", opts)
 -- Easier command mode
 keymap("n", ";", ":", opts)
 -- Buffer Navigation
@@ -44,7 +44,7 @@ keymap("n", "L", "$", opts) -- overwrites go to last visible line
 keymap("n", "H", "^", opts) -- overwrites go to first visible line
 
 keymap("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace current word" })
-keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make file executable", noremap = true })
+keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make executable", noremap = true })
 
 -- Insert --
 -- Press jk fast to exit
@@ -60,7 +60,7 @@ keymap("v", "K", ":m .-2<CR>==", opts)
 -- Paste without yanking
 keymap("v", "p", '"_dP', opts)
 -- Delete without yanking
-keymap("v", "<leader>d", "\"_d")
+keymap("v", "<leader>d", '"_d')
 
 -- Visual Block --
 -- Move text up and down
