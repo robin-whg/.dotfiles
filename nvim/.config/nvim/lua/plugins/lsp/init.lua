@@ -85,10 +85,11 @@ return {
 			-- https://neovim.io/doc/user/lsp.html#vim.lsp.buf.format()
 
 			bind("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", getOpts())
+			bind("n", "gK", "<cmd>lua vim.lsp.buf.signature_help()<cr>", getOpts("Signature help"))
 			-- FIXME Not working
 			bind("n", "<A-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", getOpts())
 			-- FIXME Not working
-			bind("n", "<C-.>", "<cmd>lua vim.lsp.buf.code_action()<cr>", getOpts("Code action"))
+			bind("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", getOpts("Code action"))
 
 			bind("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", getOpts("Go to definition"))
 			bind("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", getOpts("Go to declaration"))
@@ -100,7 +101,7 @@ return {
 			bind("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", getOpts("Previous diagnostic"))
 			bind("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", getOpts("Next diagnostic"))
 
-			bind("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>", getOpts("Rename Symbol"))
+			bind("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", getOpts("Rename Symbol"))
 		end)
 
 		lsp.setup()
@@ -133,6 +134,8 @@ return {
 					range = true,
 					desc = "Format using null-ls",
 				})
+
+				vim.keymap.set("n", "K", "<cmd>NullFormat<cr>", { desc = "Format document" })
 
 				if client.supports_method("textDocument/formatting") then
 					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })

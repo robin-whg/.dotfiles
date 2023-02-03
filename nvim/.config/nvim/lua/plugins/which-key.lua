@@ -23,6 +23,7 @@ return {
 			["<leader>fc"] = { name = "find command" },
 			["<leader>g"] = { name = "git" },
 			["<leader>gh"] = { name = "hunk" },
+			["<leader>c"] = { name = "code" },
 		})
 	end,
 }
