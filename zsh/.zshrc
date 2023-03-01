@@ -80,6 +80,8 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
 bindkey '^ ' autosuggest-accept
 
+export PATH=$PATH:/usr/local/go/bin
+
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
