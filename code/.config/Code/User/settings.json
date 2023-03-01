@@ -4,7 +4,7 @@
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.cursorBlinking": "phase",
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.smoothScrolling": true,
   "editor.minimap.enabled": false,
   "editor.scrollbar.verticalScrollbarSize": 0,
@@ -21,7 +21,6 @@
   "terminal.integrated.gpuAcceleration": "on",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.shellIntegration.enabled": true,
-  "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.startupEditor": "none",
   "workbench.list.smoothScrolling": true,
   "workbench.layoutControl.enabled": false,
@@ -34,7 +33,6 @@
   "window.newWindowDimensions": "offset",
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
   "window.titleBarStyle": "custom",
-  "breadcrumbs.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
   "telemetry.telemetryLevel": "off",
   "git.autofetch": true,
@@ -57,7 +55,6 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "Lua.telemetry.enable": false,
   "volar.icon.preview": false,
-  "volar.autoCompleteRefs": true,
   "eslint.format.enable": true,
   "vim.leader": "space",
   "vim.useSystemClipboard": true,
@@ -326,34 +323,23 @@
   "cSpell.language": "de,en,lorem",
   "cSpell.caseSensitive": false,
   "cSpell.allowCompoundWords": true,
-  "cSpell.enabledLanguageIds": [
-    "markdown",
-    "plaintext",
-    "yml"
-  ],
   "gutterpreview.showImagePreviewOnGutter": false,
   "gitdoc.autoPull": "off",
   "gitdoc.autoPush": "off",
+  "terminal.integrated.defaultProfile.linux": "tmux",
   "terminal.integrated.profiles.linux": {
-    "zsh": {
-      "path": "zsh"
-    },
     "tmux": {
       "path": "zsh",
       "icon": "terminal-tmux",
       "args": [
         "-c",
-        "tmux new-session -A -s code"
+        "tmux new-session -A -s ${PWD##*/}"
       ]
     },
   },
-  "terminal.integrated.defaultProfile.linux": "tmux",
-  "catppuccin.accentColor": "blue",
-  "todo-tree.general.enableFileWatcher": true,
-  "todo-tree.general.statusBar": "current file",
+  "todo-tree.general.statusBar": "total",
   "todo-tree.general.statusBarClickBehaviour": "cycle",
   "todo-tree.general.showIconsInsteadOfTagsInStatusBar": false,
-  //add markdown support
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "todo-tree.general.tags": [
     "TODO", //todo
@@ -438,4 +424,9 @@
   "[lua]": {
     "editor.defaultFormatter": "sumneko.lua"
   },
+  "cSpell.userWords": [
+    "Nuxt"
+  ],
+  "breadcrumbs.enabled": false,
+  "workbench.colorTheme": "GitHub Dark Colorblind (Beta)",
 }

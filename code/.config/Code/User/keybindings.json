@@ -6,7 +6,7 @@
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+b",
+    "key": "ctrl+n",
     "command": "workbench.action.openPreviousEditorFromHistory",
     "when": "editorFocus"
   },
