@@ -15,8 +15,8 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
 bindkey '^ ' autosuggest-accept
 
-alias ll= "ls -l"
-alias la= "ls -la"
+alias ll="ls -l"
+alias la="ls -la"
 
 export EDITOR=nvim
 export VISUAL="$EDITOR"
