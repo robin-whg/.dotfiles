@@ -1,4 +1,6 @@
 {
+  "breadcrumbs.enabled": false,
+  "editor.acceptSuggestionOnEnter": "off",
   "editor.cursorSurroundingLines": 8,
   "editor.fontFamily": "FiraCode Nerd Font",
   "editor.fontSize": 14,
@@ -28,7 +30,6 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "explorer.autoReveal": true,
-  "window.experimental.windowControlsOverlay.enabled": false,
   "window.commandCenter": false,
   "window.newWindowDimensions": "offset",
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
@@ -48,69 +49,29 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "Lua.telemetry.enable": false,
-  "volar.icon.preview": false,
   "eslint.format.enable": true,
   "vim.leader": "space",
   "vim.useSystemClipboard": true,
   "vim.handleKeys": {
     "<C-w>": true,
-    "<C-o>": true,
-    "<C-i>": true,
+    "<C-i>": false,
+    "<C-o>": false,
     "<C-a>": false,
     "<C-x>": false,
     "<C-b>": false,
     "<C-f>": false,
+    "<C-n>": false,
+    "<C-p>": false,
   },
   "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "<tab>"
-      ],
-      "commands": [
-        "workbench.action.nextEditor"
-      ]
-    },
-    {
-      "before": [
-        "<shift+tab>"
-      ],
-      "commands": [
-        "workbench.action.previousEditor"
-      ]
-    },
-    {
-      "before": [
-        "C-x"
-      ],
-      "after": [
-        "C-w"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "<tab>"
-      ],
-      "commands": [
-        "workbench.action.nextEditor"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "<s-tab>"
-      ],
-      "commands": [
-        "workbench.action.previousEditor"
-      ],
-      "silent": true
-    },
     {
       "before": [
         "K"
@@ -179,6 +140,150 @@
       ],
       "after": [
         ":"
+      ]
+    },
+    /* leader keys */
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "c"
+      ],
+      "commands": [
+        "workbench.action.openQuickChat.copilot"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "i"
+      ],
+      "commands": [
+        "inlineChat.start"
+      ],
+      "when": "inlineChatHasProvider && !editorReadonly"
+    },
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "e"
+      ],
+      "commands": [
+        "workbench.action.openChat.copilot"
+      ],
+    },
+    {
+      "before": [
+        "<leader>",
+        "h"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ],
+      "when": "editorTextFocus"
+    },
+    {
+      "before": [
+        "<leader>",
+        "r"
+      ],
+      "commands": [
+        "editor.action.rename"
+      ],
+      "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly",
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "n"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "p"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "p"
+      ],
+      "commands": [
+        "lineBreakInsert"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "."
+      ],
+      "commands": [
+        "editor.action.quickFix"
+      ],
+      "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    // Replace
+    {
+      "before": [
+        "<leader>",
+        "r",
+        "w"
+      ],
+      "commands": [
+        // ":%s/\<<C-r><C-w>\>//g<Left><Left>"
+        ":%s/\\<<C-r><C-w>\\>//g<Left><Left>"
+      ]
+    },
+    // {
+    //   "before": [
+    //     "<leader>",
+    //     "l"
+    //   ],
+    //   "commands": [
+    //     "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+    //   ],
+    //   "when": "!activeEditorGroupEmpty"
+    // },
+    // {
+    //   "before": [
+    //     "<leader>",
+    //     "l"
+    //   ],
+    //   "commands": [
+    //     "workbench.action.quickOpenNavigateNextInEditorPicker",
+    //   ],
+    //   "when": "inEditorsPicker && inQuickOpen"
+    // },
+    // {
+    //   "key": "ctrl+tab",
+    //   "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+    //   "when": "!activeEditorGroupEmpty"
+    // }
+    // {
+    //   "key": "ctrl+tab",
+    //   "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
+    //   "when": "inEditorsPicker && inQuickOpen"
+    // }
+    {
+      "before": [
+        "<leader>",
+        "l"
+      ],
+      "commands": [
+        "workbench.action.openPreviousEditorFromHistory"
       ]
     },
     /* goto keys */
@@ -320,23 +425,24 @@
       ]
     }
   ],
-  "cSpell.language": "de,en,lorem",
-  "cSpell.caseSensitive": false,
-  "cSpell.allowCompoundWords": true,
-  "gutterpreview.showImagePreviewOnGutter": false,
-  "gitdoc.autoPull": "off",
-  "gitdoc.autoPush": "off",
-  "terminal.integrated.defaultProfile.linux": "tmux",
-  "terminal.integrated.profiles.linux": {
-    "tmux": {
-      "path": "zsh",
-      "icon": "terminal-tmux",
-      "args": [
-        "-c",
-        "tmux new-session -A -s ${PWD##*/}"
-      ]
-    },
-  },
+  // "terminal.integrated.defaultProfile.linux": "tmux",
+  // "terminal.integrated.profiles.linux": {
+  //   "tmux": {
+  //     "path": "zsh",
+  //     "icon": "terminal-tmux",
+  //     "args": [
+  //       "-c",
+  //       "tmux new-session -A -s ${PWD##*/}"
+  //     ]
+  //   },
+  // },
+  /* extensions */
+  "errorLens.enabledDiagnosticLevels": [
+    "error",
+  ],
+  "errorLens.onSave": true,
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.delay": 50,
   "todo-tree.general.statusBar": "total",
   "todo-tree.general.statusBarClickBehaviour": "cycle",
   "todo-tree.general.showIconsInsteadOfTagsInStatusBar": false,
@@ -358,8 +464,8 @@
     "iconColour": "#ed8796",
     "opacity": 25,
     "icon": "check",
-    "type": "text",
-    "gutterIcon": true
+    "type": "text-and-comment",
+    "gutterIcon": true,
   },
   "todo-tree.highlights.customHighlight": {
     "TODO": {
@@ -421,12 +527,14 @@
       "type": "tag",
     },
   },
-  "[lua]": {
-    "editor.defaultFormatter": "sumneko.lua"
-  },
+  "cSpell.language": "de,en,lorem",
+  "cSpell.caseSensitive": false,
+  "cSpell.allowCompoundWords": true,
   "cSpell.userWords": [
+    "antfu",
     "Nuxt"
   ],
-  "breadcrumbs.enabled": false,
-  "workbench.colorTheme": "GitHub Dark Colorblind (Beta)",
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
 }
