@@ -1,5 +1,5 @@
 .DS_Store
 **/plugin/
-**/plugins/
+tmux/.config/tmux/plugins/
 **/ignore
 nvim/**/lazy-lock.json
