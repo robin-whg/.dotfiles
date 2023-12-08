@@ -21,3 +21,11 @@ alias la= "ls -la"
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 export BROWSER=firefox
+
+# pnpm
+export PNPM_HOME="/home/robin/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
