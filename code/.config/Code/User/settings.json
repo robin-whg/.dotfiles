@@ -1,7 +1,7 @@
 {
   "breadcrumbs.enabled": false,
-  "editor.acceptSuggestionOnEnter": "off",
-  "editor.cursorSurroundingLines": 8,
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.cursorSurroundingLines": 4,
   "editor.fontFamily": "FiraCode Nerd Font",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
@@ -58,7 +58,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "eslint.format.enable": true,
-  "vim.leader": "space",
+  // "vim.leader": "space",
   "vim.useSystemClipboard": true,
   "vim.handleKeys": {
     "<C-w>": true,
@@ -70,8 +70,17 @@
     "<C-f>": false,
     "<C-n>": false,
     "<C-p>": false,
+    "<C-k>": false,
   },
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "whichkey.show"
+      ]
+    },
     {
       "before": [
         "K"
@@ -142,151 +151,17 @@
         ":"
       ]
     },
-    /* leader keys */
-    {
-      "before": [
-        "<leader>",
-        "c",
-        "c"
-      ],
-      "commands": [
-        "workbench.action.openQuickChat.copilot"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "c",
-        "i"
-      ],
-      "commands": [
-        "inlineChat.start"
-      ],
-      "when": "inlineChatHasProvider && !editorReadonly"
-    },
-    {
-      "before": [
-        "<leader>",
-        "c",
-        "e"
-      ],
-      "commands": [
-        "workbench.action.openChat.copilot"
-      ],
-    },
-    {
-      "before": [
-        "<leader>",
-        "h"
-      ],
-      "commands": [
-        "editor.action.showHover"
-      ],
-      "when": "editorTextFocus"
-    },
-    {
-      "before": [
-        "<leader>",
-        "r"
-      ],
-      "commands": [
-        "editor.action.rename"
-      ],
-      "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly",
-      "silent": true
-    },
-    {
-      "before": [
-        "<leader>",
-        "n"
-      ],
-      "commands": [
-        "workbench.action.nextEditor"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "<leader>",
-        "p"
-      ],
-      "commands": [
-        "workbench.action.previousEditor"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "<leader>",
-        "p"
-      ],
-      "commands": [
-        "lineBreakInsert"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "<leader>",
-        "."
-      ],
-      "commands": [
-        "editor.action.quickFix"
-      ],
-      "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
-    },
-    // Replace
-    {
-      "before": [
-        "<leader>",
-        "r",
-        "w"
-      ],
-      "commands": [
-        // ":%s/\<<C-r><C-w>\>//g<Left><Left>"
-        ":%s/\\<<C-r><C-w>\\>//g<Left><Left>"
-      ]
-    },
-    // {
-    //   "before": [
-    //     "<leader>",
-    //     "l"
-    //   ],
-    //   "commands": [
-    //     "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
-    //   ],
-    //   "when": "!activeEditorGroupEmpty"
-    // },
-    // {
-    //   "before": [
-    //     "<leader>",
-    //     "l"
-    //   ],
-    //   "commands": [
-    //     "workbench.action.quickOpenNavigateNextInEditorPicker",
-    //   ],
-    //   "when": "inEditorsPicker && inQuickOpen"
-    // },
-    // {
-    //   "key": "ctrl+tab",
-    //   "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
-    //   "when": "!activeEditorGroupEmpty"
-    // }
-    // {
-    //   "key": "ctrl+tab",
-    //   "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
-    //   "when": "inEditorsPicker && inQuickOpen"
-    // }
-    {
-      "before": [
-        "<leader>",
-        "l"
-      ],
-      "commands": [
-        "workbench.action.openPreviousEditorFromHistory"
-      ]
-    },
     /* goto keys */
+    /*
+      d	Go to definition	command	editor.action.revealDefinition
+      h	Show call hierarchy	command	references-view.showCallHierarchy
+      r	Go to reference	command	editor.action.goToReferences
+      s	Go to symbol in buffer	command	workbench.action.gotoSymbol
+      t	Go to type definition	command	editor.action.goToTypeDefinition
+      i Go to implementation
+      o Go to link
+      f Go to file from text
+    */
     {
       "before": [
         "g",
@@ -299,28 +174,10 @@
     {
       "before": [
         "g",
-        "D"
+        "h"
       ],
       "commands": [
-        "editor.action.peekDefinition"
-      ]
-    },
-    {
-      "before": [
-        "g",
-        "t"
-      ],
-      "commands": [
-        "editor.action.goToTypeDefinition"
-      ]
-    },
-    {
-      "before": [
-        "g",
-        "T"
-      ],
-      "commands": [
-        "editor.action.peekTypeDefinition"
+        "references-view.showCallHierarchy"
       ]
     },
     {
@@ -335,10 +192,19 @@
     {
       "before": [
         "g",
-        "R"
+        "s"
       ],
       "commands": [
-        "editor.action.referenceSearch.trigger"
+        "workbench.action.gotoSymbol"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "t"
+      ],
+      "commands": [
+        "editor.action.goToTypeDefinition"
       ]
     },
     {
@@ -353,10 +219,10 @@
     {
       "before": [
         "g",
-        "I"
+        "l"
       ],
       "commands": [
-        "editor.action.peekImplementation"
+        "editor.action.openLink"
       ]
     },
     {
@@ -367,7 +233,64 @@
       "commands": [
         "seito-openfile.openFileFromText"
       ]
-    }
+    },
+    /*
+      d	Peek definition	command	editor.action.peekDefinition
+      h	Peek call hierarchy	command	editor.showCallHierarchy
+      i	Peek implementations	command	editor.action.peekImplementation
+      r	Peek references	command	editor.action.referenceSearch.trigger
+      t	Peek type definition	command	editor.action.peekTypeDefinition
+    */
+    {
+      "before": [
+        "g",
+        "p",
+        "d"
+      ],
+      "commands": [
+        "editor.action.peekDefinition"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "p",
+        "h"
+      ],
+      "commands": [
+        "editor.showCallHierarchy"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "p",
+        "i"
+      ],
+      "commands": [
+        "editor.action.peekImplementation"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "p",
+        "r"
+      ],
+      "commands": [
+        "editor.action.referenceSearch.trigger"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "p",
+        "t"
+      ],
+      "commands": [
+        "editor.action.peekTypeDefinition"
+      ]
+    },
   ],
   "vim.insertModeKeyBindings": [
     { // easier edit mode exit
@@ -381,6 +304,22 @@
     },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "whichkey.show"
+      ]
+    },
+    {
+      "before": [
+        ";",
+      ],
+      "after": [
+        ":"
+      ]
+    },
     { // paste without yanking selection
       "before": [
         "p"
@@ -422,6 +361,177 @@
       ],
       "commands": [
         "editor.action.outdentLines"
+      ]
+    }
+  ],
+  "whichkey.delay": 0,
+  "whichkey.sortOrder": "alphabetically",
+  "whichkey.showButtons": false,
+  "whichkey.bindings": [
+    {
+      "key": "n",
+      "name": "Next buffer",
+      "type": "command",
+      "command": "workbench.action.nextEditor"
+    },
+    {
+      "key": "p",
+      "name": "Previous buffer",
+      "type": "command",
+      "command": "workbench.action.previousEditor"
+    },
+    {
+      "key": "r",
+      "name": "Rename symbol",
+      "type": "command",
+      "command": "editor.action.rename"
+    },
+    {
+      "key": "c",
+      "name": "Copilot+",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "c",
+          "name": "Open chat",
+          "type": "command",
+          "command": "workbench.action.openChat.copilot"
+        },
+        {
+          "key": "q",
+          "name": "Open quick chat",
+          "type": "command",
+          "command": "workbench.action.openQuickChat.copilot"
+        },
+        {
+          "key": "i",
+          "name": "Open inline chat",
+          "type": "command",
+          "command": "inlineChat.start"
+        },
+        {
+          "key": "p",
+          "name": "Focus panel chat",
+          "type": "command",
+          "command": "workbench.panel.chat.view.copilot.focus"
+        },
+        {
+          "key": "e",
+          "name": "Explain this",
+          "type": "command",
+          "command": "github.copilot.interactiveEditor.explain"
+        },
+        {
+          "key": "f",
+          "name": "Fix this",
+          "type": "command",
+          "command": "github.copilot.interactiveEditor.fix"
+        },
+        {
+          "key": "a",
+          "name": "Accept panel solution",
+          "type": "command",
+          "command": "github.copilot.acceptCursorPanelSolution"
+        }
+      ]
+    },
+    {
+      "key": "f",
+      "name": "File+",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "n",
+          "name": "New File",
+          "type": "command",
+          "command": "explorer.newFile"
+        },
+        {
+          "key": "r",
+          "name": "Rename file",
+          "type": "command",
+          "command": "renameFile"
+        },
+        {
+          "key": "d",
+          "name": "Delete file",
+          "type": "command",
+          "command": "deleteFile"
+        },
+        {
+          "key": "f",
+          "name": "Format document",
+          "type": "command",
+          "command": "editor.action.formatDocument"
+        },
+        {
+          "key": "s",
+          "name": "Save without formatting",
+          "type": "command",
+          "command": "workbench.action.files.saveWithoutFormatting"
+        },
+        {
+          "key": "e",
+          "name": "Reveal in system explorer",
+          "type": "command",
+          "command": "revealFileInOS"
+        },
+        {
+          "key": "c",
+          "name": "Copy+",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "p",
+              "name": "Copy path",
+              "type": "command",
+              "command": "copyFilePath"
+            },
+            {
+              "key": "r",
+              "name": "Copy relative path",
+              "type": "command",
+              "command": "copyRelativeFilePath"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "w",
+      "name": "Window+",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "r",
+          "name": "Reload window",
+          "type": "command",
+          "command": "workbench.action.reloadWindow"
+        },
+        {
+          "key": "e",
+          "name": "Focus explorer",
+          "type": "command",
+          "command": "workbench.view.explorer"
+        },
+        {
+          "key": "p",
+          "name": "Focus panel chat",
+          "type": "command",
+          "command": "workbench.panel.chat.view.copilot.focus"
+        },
+        {
+          "key": "c",
+          "name": "Toggle centered layout",
+          "type": "command",
+          "command": "workbench.action.toggleCenteredLayout"
+        },
+        {
+          "key": "z",
+          "name": "Toggle zen mode",
+          "type": "command",
+          "command": "workbench.action.toggleZenMode"
+        }
       ]
     }
   ],
@@ -537,4 +647,6 @@
   "[vue]": {
     "editor.defaultFormatter": "Vue.volar"
   },
+  "gutterpreview.showUnderline": false,
+  "gutterpreview.showImagePreviewOnGutter": false,
 }
