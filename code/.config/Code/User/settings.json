@@ -333,22 +333,6 @@
     },
     {
       "before": [
-        "J"
-      ],
-      "commands": [
-        "editor.action.moveLinesDownAction"
-      ]
-    },
-    {
-      "before": [
-        "K"
-      ],
-      "commands": [
-        "editor.action.moveLinesUpAction"
-      ]
-    },
-    {
-      "before": [
         ">"
       ],
       "commands": [
@@ -533,19 +517,50 @@
           "command": "workbench.action.toggleZenMode"
         }
       ]
+    },
+    {
+      "key": "m",
+      "name": "Markdown+",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "c",
+          "name": "Check task",
+          "type": "command",
+          "command": "markdown.extension.checkTaskList",
+        },
+        {
+          "key": "p",
+          "name": "Show preview",
+          "type": "command",
+          "command": "markdown.showPreview"
+        },
+        {
+          "key": "b",
+          "name": "Toggle bold",
+          "type": "command",
+          "command": "markdown.extension.editing.toggleBold",
+        },
+        {
+          "key": "i",
+          "name": "Toggle italic",
+          "type": "command",
+          "command": "markdown.extension.editing.toggleItalic",
+        },
+      ]
     }
   ],
-  // "terminal.integrated.defaultProfile.linux": "tmux",
-  // "terminal.integrated.profiles.linux": {
-  //   "tmux": {
-  //     "path": "zsh",
-  //     "icon": "terminal-tmux",
-  //     "args": [
-  //       "-c",
-  //       "tmux new-session -A -s ${PWD##*/}"
-  //     ]
-  //   },
-  // },
+  "terminal.integrated.defaultProfile.linux": "tmux",
+  "terminal.integrated.profiles.linux": {
+    "tmux": {
+      "path": "zsh",
+      "icon": "terminal-tmux",
+      "args": [
+        "-c",
+        "tmux new-session -A -s ${PWD##*/}"
+      ]
+    },
+  },
   /* extensions */
   "errorLens.enabledDiagnosticLevels": [
     "error",
