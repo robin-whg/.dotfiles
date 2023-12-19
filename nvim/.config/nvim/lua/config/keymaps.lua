@@ -4,30 +4,17 @@
 
 local map = vim.keymap.set
 
--- Press jk to exit
-map("i", "jk", "<ESC>", { expr = true, silent = true })
-
--- Easier command mode
-map({ "n", "v" }, ";", ":", { expr = true, silent = true })
-
--- Quit all
-map("n", "<C-q>", "<cmd>qa<cr>", { desc = "Quit all" })
-
--- don't yank chars deleted with x
-map("n", "x", '"_x', { expr = true, silent = true })
-
--- Paste last thing yanked - not deleted
-map("n", "<alt-p>", '"0p', { expr = true, silent = true, desc = "Paste last thing yanked - not deleted" })
-
--- Yank to end of line
-map("n", "Y", "yg$", { expr = true, silent = true, desc = "Yank to end of line" })
-
--- TODO easier rename/replace
--- keymap("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace current word" })
--- rename symbol
--- replace word
-
--- buffer navigation
-map("n", "<C-n>", "<C-^>", { expr = true, silent = true })
-
-map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make file executable", expr = true })
+map("i", "jk", "<esc>", { silent = true })
+map({ "n", "v" }, ";", ":", { silent = true })
+map("n", "<C-q>", "<cmd>qa<cr>", { silent = true })
+map("n", "<S-l>", "$", { desc = "Next buffer" })
+map("n", "<S-h>", "^", { desc = "Prev buffer" })
+map("n", "x", '"_x', { silent = true })     -- don't yank chars deleted with x
+map("n", "<A-p>", '"0p', { silent = true }) -- Paste last thing yanked, not deleted
+map("n", "Y", "yg$", { silent = true })     -- Y to behave like D and C
+-- vim-tmux-navigator
+map({ "i", "n", "v" }, "<C-k>", "<cmd>TmuxNavigateUp<cr><esc>", { desc = "Move cursor to top pane" })
+map({ "i", "n", "v" }, "<C-j>", "<cmd>TmuxNavigateDown<cr><esc>", { desc = "Move cursor to bottom pane" })
+map({ "i", "n", "v" }, "<C-h>", "<cmd>TmuxNavigateLeft<cr><esc>", { desc = "Move cursor to left pane" })
+map({ "i", "n", "v" }, "<C-l>", "<cmd>TmuxNavigateRight<cr><esc>", { desc = "Move cursor to right pane" })
+map({ "i", "n", "v" }, "<C-\\>", "<cmd>TmuxNavigatePrevious<cr><esc>", { desc = "Move cursor to previous pane" })

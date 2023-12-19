@@ -4,6 +4,4 @@
 
 local opt = vim.opt
 
-opt.relativenumber = false -- Relative line numbers
-opt.scrolloff = 8          -- Lines of context
-opt.cmdheight = 2          -- More space for displaying messages
+opt.relativenumber = false

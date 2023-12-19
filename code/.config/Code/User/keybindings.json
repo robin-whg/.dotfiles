@@ -29,11 +29,6 @@
     "when": "canNavigateBack"
   },
   {
-    "key": "ctrl+x",
-    "command": "workbench.action.terminal.focus",
-    "when": "!terminalFocus"
-  },
-  {
     "key": "ctrl+n",
     "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
     "when": "!activeEditorGroupEmpty"
@@ -48,18 +43,6 @@
     "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker",
     "when": "inEditorsPicker && inQuickOpen"
   },
-  {
-    "key": "ctrl+a",
-    "command": "editor.action.inlineSuggest.acceptNextLine",
-    "when": "inlineSuggestionVisible && !editorReadonly"
-  },
-  // Terminal
-  {
-    "key": "ctrl+x",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus"
-  },
-  // Explorer
   {
     "key": "ctrl+r",
     "command": "renameFile",
@@ -118,44 +101,54 @@
   },
   {
     "key": "ctrl+k",
+    "command": "selectPrevCodeAction",
     "when": "codeActionMenuVisible",
-    "command": "selectPrevCodeAction"
   },
   {
     "key": "ctrl+j",
+    "command": "selectNextCodeAction",
     "when": "codeActionMenuVisible",
-    "command": "selectNextCodeAction"
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorFocus"
   },
   // Window Navigation
   {
     "key": "ctrl+h",
     "command": "workbench.action.navigateLeft",
-    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible"
+    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !terminalFocus"
   },
   {
     "key": "ctrl+l",
     "command": "workbench.action.navigateRight",
-    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible"
+    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !terminalFocus"
   },
   {
     "key": "ctrl+j",
     "command": "workbench.action.navigateDown",
-    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !listFocus && !codeActionMenuVisible"
+    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !listFocus && !codeActionMenuVisible && !terminalFocus"
   },
   {
     "key": "ctrl+k",
     "command": "workbench.action.navigateUp",
-    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !listFocus && !codeActionMenuVisible"
+    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !listFocus && !codeActionMenuVisible && !terminalFocus"
   },
   {
     "key": "ctrl+h",
     "command": "workbench.action.previousPanelView",
-    "when": "panelFocus"
+    "when": "panelFocus && !terminalFocus"
   },
   {
     "key": "ctrl+l",
     "command": "workbench.action.nextPanelView",
-    "when": "panelFocus"
+    "when": "panelFocus && !terminalFocus"
   },
   // Deleted
   {
@@ -178,11 +171,51 @@
     "command": "-workbench.action.files.newUntitledFile"
   },
   {
-    "key": "ctrl+x",
-    "command": "workbench.action.closeActiveEditor"
-  },
-  {
     "key": "ctrl+w",
     "command": "-workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-workbench.action.files.openFile",
+    "when": "true"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-workbench.action.files.openFolderViaWorkspace",
+    "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-workbench.action.files.openFileFolder",
+    "when": "isMacNative && openFolderWorkspaceSupport"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+k ctrl+i",
+    "command": "-workbench.action.terminal.focusHover",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalIsOpen || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-inlineChat.start",
+    "when": "editorFocus && inlineChatHasProvider && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-markdown.showPreview",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-markdown.extension.editing.toggleItalic",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-markdown.extension.editing.toggleBold",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
   },
 ]
