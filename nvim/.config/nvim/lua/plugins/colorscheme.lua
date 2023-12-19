@@ -1,12 +1,19 @@
 return {
-  -- add gruvbox
-  { "catppuccin", opts = {
-    flavour = "macchiato",
-  } },
   {
-    "LazyVim/LazyVim",
+    "folke/tokyonight.nvim",
     opts = {
-      colorscheme = "catppuccin",
+      transparent = true,
+      mode = "moon",
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
+    {
+      "LazyVim/LazyVim",
+      opts = {
+        colorscheme = "tokyonight",
+      },
     },
   },
 }
