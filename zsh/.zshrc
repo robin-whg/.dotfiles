@@ -18,6 +18,7 @@ alias ll="ls -l"
 alias la="ls -la"
 alias cat="batcat"
 alias vi="nvim"
+alias py="python3"
 
 export EDITOR=nvim
 export VISUAL="$EDITOR"
