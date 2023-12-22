@@ -2,6 +2,10 @@ return {
   "nvim-cmp",
   opts = function(_, opts)
     local cmp = require("cmp")
+    opts.window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+    }
     opts.mapping = cmp.mapping.preset.insert({
       ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
       ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),

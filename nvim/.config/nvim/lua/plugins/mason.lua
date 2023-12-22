@@ -6,5 +6,8 @@ return {
       "emmet-language-server",
       "vue-language-server",
     })
+    opts.ui = {
+      border = "rounded",
+    }
   end,
 }
