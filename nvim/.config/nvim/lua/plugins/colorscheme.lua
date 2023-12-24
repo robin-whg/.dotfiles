@@ -6,5 +6,14 @@ return {
       sidebars = "normal",
       floats = "normal",
     },
+    on_highlights = function(hl, c)
+      hl.winbar = {
+        bg = c.bg,
+      }
+      hl.winbarnc = {
+        fg = c.fg_dark,
+        bg = c.bg,
+      }
+    end,
   },
 }

@@ -4,5 +4,6 @@ return {
     opts.draw = {
       animation = require("mini.indentscope").gen_animation.none(),
     }
+    opts.symbol = "╎"
   end,
 }
