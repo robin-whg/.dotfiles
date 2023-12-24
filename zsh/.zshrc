@@ -16,10 +16,13 @@ bindkey '^ ' autosuggest-accept
 
 alias ll="ls -l"
 alias la="ls -la"
-alias cat="batcat"
-alias vi="nvim"
+alias bat="batcat"
+alias vim="nvim"
 alias py="python3"
+alias copy="xsel -ib"
+alias tma="tmux new-session -A -s"
 
+export TERM=wezterm
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 export BROWSER=firefox
@@ -47,7 +50,7 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%})%{$reset_color%}"
 
-PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
+PROMPT="%B%{$fg[cyan]%}%n@%m%  %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
 PROMPT+="\$vcs_info_msg_0_ "
 
 # pnpm
