@@ -4,16 +4,24 @@
 
 local map = vim.keymap.set
 
-map("i", "jk", "<esc>", { silent = true })          -- jk to escape
-map({ "n", "v" }, ";", ":", { silent = true })      -- easier to type :
+map("i", "jk", "<esc>", { silent = true }) -- jk to escape
+map({ "n", "v" }, ";", ":", { silent = true }) -- easier to type :
 map("n", "<C-q>", "<cmd>qa<cr>", { silent = true }) -- quit all buffers
-map("n", "<S-l>", "$", { silent = true })           -- move to end of line
-map("n", "<S-h>", "^", { silent = true })           -- move to beginning of line
-map("n", "x", '"_x', { silent = true })             -- don't yank chars deleted with x
-map("n", "<A-p>", '"0p', { silent = true })         -- Paste last thing yanked, not deleted
-map("n", "Y", "yg$", { silent = true })             -- Y to behave like D and C
+map("n", "<S-l>", "$", { silent = true }) -- move to end of line
+map("n", "<S-h>", "^", { silent = true }) -- move to beginning of line
+map("n", "x", '"_x', { silent = true }) -- don't yank chars deleted with x
+map("n", "<A-p>", '"0p', { silent = true }) -- Paste last thing yanked, not deleted
+map("n", "Y", "yg$", { silent = true }) -- Y to behave like D and C
 
 -- TODO Add replace keymaps
+
+local del = vim.keymap.del
+
+-- Disable terminal binds
+del("n", "<C-_>")
+del("n", "<c-/>")
+del("n", "<leader>ft")
+del("n", "<leader>fT")
 
 -- vim-tmux-navigator
 map({ "i", "n", "v" }, "<C-k>", "<cmd>TmuxNavigateUp<cr><esc>", { desc = "Move cursor to top pane" })
