@@ -1,8 +1,8 @@
 return {
   "echasnovski/mini.indentscope",
-  opts = {
-    draw = {
+  opts = function(_, opts)
+    opts.draw = {
       animation = require("mini.indentscope").gen_animation.none(),
-    },
-  },
+    }
+  end,
 }
