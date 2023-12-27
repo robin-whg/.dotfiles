@@ -79,7 +79,8 @@
       ],
       "commands": [
         "whichkey.show"
-      ]
+      ],
+      "silent": true
     },
     {
       "before": [
@@ -96,7 +97,7 @@
       ],
       "after": [
         "^"
-      ]
+      ],
     },
     {
       "before": [
@@ -104,7 +105,7 @@
       ],
       "after": [
         "$"
-      ]
+      ],
     },
     { // don't yank deleted char with x
       "before": [
@@ -152,16 +153,6 @@
       ]
     },
     /* goto keys */
-    /*
-      d	Go to definition	command	editor.action.revealDefinition
-      h	Show call hierarchy	command	references-view.showCallHierarchy
-      r	Go to reference	command	editor.action.goToReferences
-      s	Go to symbol in buffer	command	workbench.action.gotoSymbol
-      t	Go to type definition	command	editor.action.goToTypeDefinition
-      i Go to implementation
-      o Go to link
-      f Go to file from text
-    */
     {
       "before": [
         "g",
@@ -219,7 +210,7 @@
     {
       "before": [
         "g",
-        "l"
+        "x"
       ],
       "commands": [
         "editor.action.openLink"
@@ -234,13 +225,6 @@
         "seito-openfile.openFileFromText"
       ]
     },
-    /*
-      d	Peek definition	command	editor.action.peekDefinition
-      h	Peek call hierarchy	command	editor.showCallHierarchy
-      i	Peek implementations	command	editor.action.peekImplementation
-      r	Peek references	command	editor.action.referenceSearch.trigger
-      t	Peek type definition	command	editor.action.peekTypeDefinition
-    */
     {
       "before": [
         "g",
