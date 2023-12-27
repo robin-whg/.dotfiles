@@ -9,3 +9,4 @@ opt.list = false
 opt.conceallevel = 0
 opt.cmdheight = 2
 opt.scrolloff = 8
+opt.spelllang = { "en_us", "de_de" }
