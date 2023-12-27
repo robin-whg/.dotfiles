@@ -2,10 +2,10 @@ return {
   "folke/noice.nvim",
   keys = {
     {
-      "<c-u>",
+      "<c-d>",
       function()
         if not require("noice.lsp").scroll(4) then
-          return "<c-u>"
+          return "<c-d>"
         end
       end,
       silent = true,
@@ -14,10 +14,10 @@ return {
       mode = { "i", "n", "s" },
     },
     {
-      "<c-d>",
+      "<c-u>",
       function()
         if not require("noice.lsp").scroll(-4) then
-          return "<c-d>"
+          return "<c-u>"
         end
       end,
       silent = true,
@@ -27,8 +27,8 @@ return {
     },
   },
   opts = function(_, opts)
-    opts.presets = {
-      lsp_doc_border = true, -- add a border to hover docs and signature help
-    }
+    opts.presets.lsp_doc_border = true -- add a border to hover docs and signature help
+    table.insert(opts.routes,
+      { filter = { event = "notify", find = "No information available" }, opts = { skip = true } })
   end,
 }
