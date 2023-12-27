@@ -19,6 +19,8 @@ return {
           client.server_capabilities.documentFormattingProvider = true
         elseif client.name == "tsserver" then
           client.server_capabilities.documentFormattingProvider = false
+        elseif client.name == "volar" then
+          client.server_capabilities.documentFormattingProvider = false
         end
       end)
     end
