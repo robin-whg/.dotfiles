@@ -22,7 +22,8 @@ alias py="python3"
 alias copy="xsel -ib"
 alias tma="tmux new-session -A -s"
 
-export TERM=wezterm
+# export TERM=wezterm
+export TERM='xterm-256color'
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 export BROWSER=firefox
