@@ -1,11 +1,9 @@
+local Util = require("lazyvim.util")
+
 return {
   "telescope.nvim",
   keys = {
-    {
-      "<C-p>",
-      "<cmd>lua require('telescope.builtin').find_files()<cr>",
-      silent = true,
-    },
+    { "<C-p>", Util.telescope("files"), silent = true },
   },
   opts = function(_, opts)
     local action = require("telescope.actions")
