@@ -37,7 +37,6 @@ return {
           {
             "diagnostics",
             colored = true,
-            symbols = { error = "E", warn = "W", info = "I", hint = "H" },
           },
           { "filetype", icon_only = true, separator = "", padding = { left = 0, right = 1 } },
           { "filename" },
