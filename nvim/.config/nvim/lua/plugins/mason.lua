@@ -5,6 +5,8 @@ return {
       "marksman",
       "emmet-language-server",
       "vue-language-server",
+      "tailwindcss-language-server",
+      "unocss-language-server",
     })
     opts.ui = {
       border = "rounded",
