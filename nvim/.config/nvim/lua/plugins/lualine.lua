@@ -1,19 +1,14 @@
 return {
   "nvim-lualine/lualine.nvim",
   opts = function()
-    local Util = require("lazyvim.util")
-
     vim.o.laststatus = vim.g.lualine_laststatus
 
     return {
       options = {
         theme = "auto",
         globalstatus = true,
-        disabled_filetypes = {
-          statusline = { "dashboard", "alpha", "starter" },
-        },
-        separator = "  ",
-        padding = 0,
+        disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
+        separator = "",
       },
       sections = {
         lualine_a = {},
@@ -21,38 +16,28 @@ return {
         lualine_c = {
           { "mode" },
           { "branch", icons_enabled = false },
-          {
-            "diff",
-            source = function()
-              local gitsigns = vim.b.gitsigns_status_dict
-              if gitsigns then
-                return {
-                  added = gitsigns.added,
-                  modified = gitsigns.changed,
-                  removed = gitsigns.removed,
-                }
-              end
-            end,
-          },
-          {
-            "diagnostics",
-            colored = true,
-          },
-          { "filetype", icon_only = true, separator = "", padding = { left = 0, right = 1 } },
+          { "diff", colored = false },
           { "filename" },
+          { "diagnostics", colored = false, symbols = { error = "E", warn = "W", info = "I", hint = "H" } },
         },
         lualine_x = {
-          {
-            require("lazy.status").updates,
-            cond = require("lazy.status").has_updates,
-            color = Util.ui.fg("Special"),
-          },
+          { "encoding" },
+          { "fileformat", symbols = { unix = "unix", dos = "dos", mac = "mac" } },
+          { "filetype", icons_enabled = false },
+          { "progress", padding = { left = 1, right = 0 } },
           { "location" },
         },
         lualine_y = {},
         lualine_z = {},
       },
-      extensions = { "neo-tree", "lazy" },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { "filename" },
+        lualine_x = { "location" },
+        lualine_y = {},
+        lualine_z = {},
+      },
     }
   end,
 }
