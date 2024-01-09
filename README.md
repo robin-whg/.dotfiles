@@ -14,3 +14,14 @@
 - stow
 - rust, cargo, stylua
 - ripgrep
+
+## ToDo
+
+- neovim
+  - open references, etc. in trouble instead of telescope
+- zsh
+  - lazy load nvm
+  - improve load time
+- tmux
+  - fix bar style for ssh clients and set to top
+  - add script for project session
