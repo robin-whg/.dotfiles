@@ -15,7 +15,7 @@
 - rust, cargo, stylua
 - ripgrep
 
-## ToDo
+## Todo
 
 - neovim
   - open references, etc. in trouble instead of telescope
@@ -24,3 +24,7 @@
   - improve load time
 - tmux
   - add script for project session
+- [ ] configure zen mode
+- [ ] https://github.com/rest-nvim/rest.nvim#usage
+- [ ] https://github.com/monaqa/dial.nvim
+- [ ] https://github.com/gaoDean/autolist.nvim
