@@ -23,5 +23,4 @@
   - lazy load nvm
   - improve load time
 - tmux
-  - fix bar style for ssh clients and set to top
   - add script for project session
