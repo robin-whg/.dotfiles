@@ -3,6 +3,7 @@ export TERM='xterm-256color'
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 export BROWSER=firefox
+export NVM_LAZY_LOAD=true
 
 alias ll="ls -l"
 alias la="ls -la"
