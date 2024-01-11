@@ -21,6 +21,9 @@ return {
         },
         root_dir = util.root_pattern("*.vue", "src/*.vue"),
       },
+      tailwindcss = {
+        root_dir = util.root_pattern("tailwind.config.js", "tailwind.config.ts"),
+      },
     },
     setup = {
       eslint = function()
