@@ -61,3 +61,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+if [ -z "$TMUX" ]
+then
+    tmux new-session -A -s "general"
+fi
