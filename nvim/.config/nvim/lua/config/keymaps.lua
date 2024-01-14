@@ -14,7 +14,7 @@ map("n", "<A-p>", '"0p', { silent = true }) -- Paste last thing yanked, not dele
 map("n", "Y", "yg$", { silent = true }) -- Y to behave like D and C
 map("n", "<C-m>", "<C-^>", { silent = true }) -- easier <C-^>
 
--- TODO Add replace keymaps
+-- TODO: Add replace keymaps
 
 local del = vim.keymap.del
 
