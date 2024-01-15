@@ -5,6 +5,7 @@ export VISUAL="$EDITOR"
 export BROWSER=firefox
 export NVM_LAZY_LOAD=true
 export NVM_LAZY_LOAD_EXTRA_COMMANDS=('vim' 'nvim' 'npx' 'pnpx')
+export VI_MODE_SET_CURSOR=true
 
 alias ll="ls -l"
 alias la="ls -la"
