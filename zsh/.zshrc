@@ -1,11 +1,18 @@
 # export TERM=wezterm
-export TERM='xterm-256color'
+# export TERM='xterm-256color'
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 export BROWSER=firefox
 export NVM_LAZY_LOAD=true
 export NVM_LAZY_LOAD_EXTRA_COMMANDS=('vim' 'nvim' 'npx' 'pnpx')
 export VI_MODE_SET_CURSOR=true
+
+if ! command -v wezterm &> /dev/null
+then
+  export TERM='xterm-256color'
+else
+  export TERM=wezterm
+fi
 
 alias ll="ls -l"
 alias la="ls -la"
