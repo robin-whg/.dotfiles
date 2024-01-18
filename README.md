@@ -17,14 +17,9 @@
 
 ## Todo
 
-- neovim
-  - open references, etc. in trouble instead of telescope
-- zsh
-  - lazy load nvm
-  - improve load time
-- tmux
-  - add script for project session
-- [ ] configure zen mode
+- [ ] replace commands
+- [ ] trouble
+- [ ] tmuxinator
 - [ ] https://github.com/rest-nvim/rest.nvim#usage
 - [ ] https://github.com/monaqa/dial.nvim
 - [ ] https://github.com/gaoDean/autolist.nvim
