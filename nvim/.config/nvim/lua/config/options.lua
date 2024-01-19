@@ -11,3 +11,4 @@ opt.cmdheight = 2
 opt.scrolloff = 8
 opt.spelllang = { "en_us", "de_de" }
 opt.winbar = "%=%t%m%="
+opt.smartindent = true
