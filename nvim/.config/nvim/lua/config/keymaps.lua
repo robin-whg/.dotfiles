@@ -12,7 +12,10 @@ map("n", "<S-h>", "^", { silent = true }) -- move to beginning of line
 map("n", "x", '"_x', { silent = true }) -- don't yank chars deleted with x
 map("n", "<A-p>", '"0p', { silent = true }) -- Paste last thing yanked, not deleted
 map("n", "Y", "yg$", { silent = true }) -- Y to behave like D and C
-map("n", "<C-m>", "<C-^>", { silent = true }) -- easier <C-^>
+-- Leader
+map("n", "<leader>l", "<cmd>e #<cr>", { desc = "Last Buffer" })
+map("n", "<leader>p", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+map("n", "<leader>n", "<cmd>bnext<cr>", { desc = "Next buffer" })
 
 -- TODO: Add replace keymaps
 
