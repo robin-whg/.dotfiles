@@ -1,18 +1,15 @@
-# export TERM=wezterm
-# export TERM='xterm-256color'
-export EDITOR=nvim
-export VISUAL="$EDITOR"
-export BROWSER=firefox
-export NVM_LAZY_LOAD=true
-export NVM_LAZY_LOAD_EXTRA_COMMANDS=('vim' 'nvim' 'npx' 'pnpx')
-export VI_MODE_SET_CURSOR=true
-
 if ! command -v wezterm &> /dev/null
 then
   export TERM='xterm-256color'
 else
   export TERM=wezterm
 fi
+
+export EDITOR=nvim
+export VISUAL="$EDITOR"
+export BROWSER=firefox
+export NVM_LAZY_LOAD=true
+export NVM_LAZY_LOAD_EXTRA_COMMANDS=('vim' 'nvim' 'npx' 'pnpx')
 
 alias ll="ls -l"
 alias la="ls -la"
@@ -32,10 +29,10 @@ compinit
 plug "zap-zsh/supercharge"
 
 plug "jeffreytse/zsh-vi-mode"
+ZVM_TERM='xterm-256color'
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
-ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 # Fix cursor style when using tmux-resurrect
-ZVM_INIT_MODE=sourcing
+# ZVM_INIT_MODE=sourcing
 
 plug "zsh-users/zsh-autosuggestions"
 bindkey '^ ' autosuggest-accept
