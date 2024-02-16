@@ -77,5 +77,5 @@ esac
 # auto start tmux
 if [ -z "$TMUX" ]
 then
-    tmux new-session -A -s "general"
+    tmux new-session -A -s "0"
 fi
