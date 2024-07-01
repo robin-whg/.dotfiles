@@ -74,8 +74,12 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
+source "/etc/profile.d/rvm.sh"
+
+export PATH="$PATH:%HOME/.rvm/bin"
+
 # auto start tmux
-if [ -z "$TMUX" ]
-then
-    tmux new-session -A -s "0"
-fi
+# if [ -z "$TMUX" ]
+# then
+    # tmux new-session -A -s "0"
+# fi
