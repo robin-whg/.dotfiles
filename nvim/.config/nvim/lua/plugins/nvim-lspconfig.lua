@@ -21,16 +21,13 @@ return {
         },
         root_dir = util.root_pattern("*.vue", "src/*.vue"),
       },
-      tailwindcss = {
-        root_dir = util.root_pattern("tailwind.config.js", "tailwind.config.ts"),
-      },
     },
     setup = {
       eslint = function()
         require("lazyvim.util").lsp.on_attach(function(client)
           if client.name == "eslint" then
             client.server_capabilities.documentFormattingProvider = true
-          elseif client.name == "tsserver" then
+          elseif client.name == "vtsls" then
             client.server_capabilities.documentFormattingProvider = false
           elseif client.name == "volar" then
             client.server_capabilities.documentFormattingProvider = false

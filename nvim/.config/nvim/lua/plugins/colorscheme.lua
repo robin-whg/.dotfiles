@@ -18,20 +18,6 @@ return {
       end,
     },
   },
-  -- {
-  --   "catppuccin/nvim",
-  --   name = "catppuccin",
-  --   priority = 1000,
-  --   opts = function(_, opts)
-  --     local macchiato = require('catppuccin.palettes').get_palette("macchiato")
-  --     opts.flavour = "macchiato"
-  --     opts.color_overrides = {
-  --       macchiato = {
-  --         -- mantle = macchiato.base
-  --       }
-  --     }
-  --   end
-  -- },
   {
     "LazyVim/LazyVim",
     opts = {

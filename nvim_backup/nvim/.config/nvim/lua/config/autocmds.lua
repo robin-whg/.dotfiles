@@ -9,7 +9,7 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 -- disable tsserver if volar is attached
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("LspAttachConflicts", { clear = true }),
-  desc = "Prevent vtsls and volar conflict",
+  desc = "Prevent tsserver and volar conflict",
   callback = function(args)
     if not (args.data and args.data.client_id) then
       return
@@ -20,11 +20,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     if client ~= nil and client.name == "volar" then
       for _, c in ipairs(active_clients) do
-        if c.name == "vtsls" then
+        if c.name == "tsserver" then
           c.stop()
         end
       end
-    elseif client ~= nil and client.name == "vtsls" then
+    elseif client ~= nil and client.name == "tsserver" then
       for _, c in ipairs(active_clients) do
         if c.name == "volar" then
           client.stop()

@@ -76,7 +76,9 @@ esac
 
 source "/etc/profile.d/rvm.sh"
 
-export PATH="$PATH:%HOME/.rvm/bin"
+# export PATH="$PATH:%HOME/.rvm/bin"
+
+export PATH="$PATH:/opt/nvim-linux64/bin"
 
 # auto start tmux
 # if [ -z "$TMUX" ]

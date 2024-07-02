@@ -2,6 +2,10 @@
 
 return {
   "telescope.nvim",
+  -- keys = {
+  --   { "<C-p>", Util.telescope("files"), silent = true },
+  --   { "<C-p>", '<cmd>lua require("telescope.builtin").git_files({ show_untracked = true })<CR>', silent = true },
+  -- },
   opts = function(_, opts)
     local action = require("telescope.actions")
     opts.defaults = {
