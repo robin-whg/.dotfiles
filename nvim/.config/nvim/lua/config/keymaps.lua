@@ -4,11 +4,14 @@
 
 local map = vim.keymap.set
 
-map("i", "jk", "<esc>", { silent = true })     -- jk to escape
-map({ "n", "v" }, ";", ":", { silent = true }) -- easier to type :
-map("n", "Y", "yg$", { silent = true })        -- Y to behave like D and C
-map("n", "<S-l>", "$", { silent = true })      -- move to end of line
-map("n", "<S-h>", "^", { silent = true })      -- move to beginning of line
+map("i", "jk", "<esc>", { silent = true })           -- `jk` to escape
+map({ "n", "v" }, ";", ":", { silent = true })       -- easier to type `:`
+map("n", "Y", "yg$", { silent = true })              -- `Y` to behave like `D` and `C`
+map("n", "<S-l>", "$", { silent = true })            -- move to end of line
+map("n", "<S-h>", "^", { silent = true })            -- move to beginning of line
+
+map("n", "<C-q>", "<cmd>qa<cr>", { silent = true })  -- quicker `<leader>qq`
+map("n", "<C-b>", "<cmd>e #<cr>", { silent = true }) -- quicker `<leader>bb`
 
 local del = vim.keymap.del
 

@@ -2,6 +2,9 @@
 
 return {
   "telescope.nvim",
+  keys = {
+    { "<c-f>", LazyVim.pick("auto"), desc = "Find Files (Root Dir)" }, -- quicker `<leader>ff`
+  },
   opts = function(_, opts)
     local action = require("telescope.actions")
     opts.defaults = {
