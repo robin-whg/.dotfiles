@@ -1,6 +1,7 @@
 # Dotfiles
 
 - Nerd font required https://www.nerdfonts.com/font-downloads
+  sdkf
 
 ## Packages
 

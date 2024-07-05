@@ -12,6 +12,9 @@ return {
         never_show = {
           ".git",
           ".DS_Store",
+          ".obsidian",
+          ".markdownlint.json",
+          ".obsidian.vimrc",
         },
       },
     },

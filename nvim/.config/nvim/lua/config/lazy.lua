@@ -55,9 +55,10 @@ require("lazy").setup({
         "zipPlugin",
       },
     },
-    ui = {
-      border = "rounded",
-    },
+  },
+  ui = {
+    border = "rounded",
+    backdrop = 100,
   },
 })
 
