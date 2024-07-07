@@ -8,10 +8,10 @@ return {
         floats = "normal",
       },
       on_highlights = function(hl, c)
-        hl.winbar = {
+        hl.Winbar = {
           bg = c.bg,
         }
-        hl.winbarnc = {
+        hl.Winbarnc = {
           fg = c.fg_dark,
           bg = c.bg,
         }
