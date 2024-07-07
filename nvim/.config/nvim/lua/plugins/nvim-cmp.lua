@@ -23,5 +23,8 @@ return {
         fallback()
       end,
     })
+    cmp.setup.filetype('markdown', {
+      sources = {},
+    })
   end,
 }
