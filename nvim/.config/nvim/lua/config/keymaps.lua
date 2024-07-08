@@ -10,8 +10,10 @@ map("n", "Y", "yg$", { silent = true }) -- `Y` to behave like `D` and `C`
 map("n", "<S-l>", "$", { silent = true }) -- move to end of line
 map("n", "<S-h>", "^", { silent = true }) -- move to beginning of line
 
-map("n", "<C-q>", "<cmd>qa<cr>", { silent = true }) -- quicker `<leader>qq`
-map("n", "<C-b>", "<cmd>e #<cr>", { silent = true }) -- quicker `<leader>bb`
+map("n", "<C-q>", "<cmd>qa<cr>", { desc = "Quit" }) -- quicker `<leader>qq`
+map("n", "<C-b>", "<cmd>e #<cr>", { desc = "Last Buffer" }) -- quicker `<leader>bb`
+map("n", "<C-p>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+map("n", "<C-n>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
 local del = vim.keymap.del
 
