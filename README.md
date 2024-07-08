@@ -1,26 +1,8 @@
 # Dotfiles
 
-- Nerd font required https://www.nerdfonts.com/font-downloads
-  sdkf
-
-## Packages
-
-- xsel
-- python3, pip3, pynvim, black
-- node, npm, pnpm
-- neovim
-- tmux
-- zsh
-- docker, docker compose
-- stow
-- rust, cargo, stylua
-- ripgrep
-
-## Todo
-
-- [ ] replace commands
-- [ ] trouble
-- [ ] tmuxinator
-- [ ] https://github.com/rest-nvim/rest.nvim#usage
-- [ ] https://github.com/monaqa/dial.nvim
-- [ ] https://github.com/gaoDean/autolist.nvim
+- Required packages `git ssh ripgrep stow zsh xsel tmux build-essential default-jre curl fd-find`
+- Additional packages
+  - Neovim
+  - zap
+  - node, pnpm
+  - tpm
