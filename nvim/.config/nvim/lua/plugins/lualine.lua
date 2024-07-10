@@ -55,14 +55,14 @@ return {
           },
         },
         lualine_x = {
-          { "encoding" },
-          { "fileformat", symbols = { unix = "unix", dos = "dos", mac = "mac" } },
           { "filetype" },
         },
         lualine_y = {
-          { "progress" },
+          { "encoding" },
+          { "fileformat", symbols = { unix = "unix", dos = "dos", mac = "mac" } },
         },
         lualine_z = {
+          { "progress" },
           { "location" },
         },
       },
