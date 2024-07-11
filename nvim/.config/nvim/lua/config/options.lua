@@ -7,4 +7,3 @@ local opt = vim.opt
 opt.relativenumber = false
 opt.list = false
 opt.spelllang = { "en_us", "de_de" }
-opt.winbar = "%=%t%m%="
