@@ -3,14 +3,10 @@ return {
   opts = {
     icons = {
       diagnostics = {
-        -- Error = " ",
-        -- Warn = " ",
-        -- Hint = " ",
-        -- Info = " ",
-        Error = "E",
-        Warn = "W",
-        Hint = "H",
-        Info = "I",
+        Error = " ",
+        Warn = " ",
+        Hint = " ",
+        Info = " ",
       },
       git = {
         -- added = " ",
