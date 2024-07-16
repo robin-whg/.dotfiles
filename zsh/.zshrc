@@ -5,7 +5,6 @@ export PATH="$PATH"
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 
-
 # Aliases
 
 alias ll="ls -l"
@@ -49,7 +48,7 @@ setopt prompt_subst
 
 
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
-# 
+  
 +vi-git-untracked(){
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
         git status --porcelain | grep '??' &> /dev/null ; then
@@ -69,3 +68,11 @@ if [ -z "$TMUX" ]
 then
   tmux new-session -A -s main
 fi
+
+# pnpm
+export PNPM_HOME="/home/robin/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
