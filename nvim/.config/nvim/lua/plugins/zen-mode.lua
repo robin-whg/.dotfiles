@@ -1,7 +1,7 @@
 return {
   "folke/zen-mode.nvim",
   keys = {
-    { "<leader>Z", "<cmd>ZenMode<cr>", desc = "Find Files (Root Dir)" },
+    { "<leader>z", "<cmd>ZenMode<cr>", desc = "zen mode" },
   },
   opts = {
     window = {
@@ -12,13 +12,13 @@ return {
         cursorline = false,
         cursorcolumn = false,
         foldcolumn = "0",
-      }
+      },
     },
     plugins = {
       wezterm = {
         enabled = true,
-        font = "+4"
+        font = "+4",
       },
     },
-  }
+  },
 }
