@@ -9,6 +9,9 @@ export VISUAL="$EDITOR"
 
 alias ll="ls -l"
 alias la="ls -la"
+alias tm="tmux"
+alias vi="nvim"
+alias ca="batcat"
 
 # Created by Zap installer
 
