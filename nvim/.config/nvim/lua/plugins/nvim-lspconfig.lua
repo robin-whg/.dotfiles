@@ -15,6 +15,9 @@ return {
         prefix = "",
       },
     },
+    inlay_hints = {
+      enabled = false,
+    },
     -- servers = {
     --   ltex = {
     --     settings = {
