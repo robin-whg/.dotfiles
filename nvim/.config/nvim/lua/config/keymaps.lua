@@ -12,7 +12,7 @@ map("n", "<S-h>", "^", { silent = true }) -- move to beginning of line
 
 map("n", "<C-q>", "<cmd>qa<cr>", { desc = "Quit" }) -- quicker `<leader>qq`
 map("n", "<C-b>", "<cmd>e #<cr>", { desc = "Last Buffer" }) -- quicker `<leader>bb`
-map("n", "<C-p>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+map("n", "<C-m>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<C-n>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
 local del = vim.keymap.del
