@@ -1,7 +1,6 @@
 # Exports
 
-path+=/opt/nvim-linux64/bin
-export PATH="$PATH"
+export PATH="$PATH:/opt/nvim-linux64/bin"
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 
@@ -65,12 +64,22 @@ zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]
 PROMPT="%{$fg[blue]%}%n@%m % %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
 PROMPT+="\$vcs_info_msg_0_ "
 
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 # Always start tmux
 
-if [ -z "$TMUX" ]
-then
-  tmux new-session -A -s main
-fi
+
+# if [ -z "$TMUX" ]
+# then
+#   tmux new-session -A -s main
+# fi
 
 # pnpm
 export PNPM_HOME="/home/robin/.local/share/pnpm"
@@ -79,3 +88,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
