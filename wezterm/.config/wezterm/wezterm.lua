@@ -11,11 +11,12 @@ config.font_size = 11
 config.font_shaper = "Harfbuzz"
 config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = {
-	left = 4,
-	right = 4,
-	top = 4,
-	bottom = 4,
+	left = 2,
+	right = 2,
+	top = 2,
+	bottom = 2,
 }
+config.window_decorations = "RESIZE"
 config.keys = {
 	{ key = "v", mods = "CTRL", action = act({ PasteFrom = "Clipboard" }) },
 }

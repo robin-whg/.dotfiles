@@ -1,23 +1,20 @@
 # Exports
-
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 
 # Aliases
-
-alias ll="ls -l"
-alias la="ls -la"
+alias ll="ls -l | batcat"
+alias la="ls -la | batcat"
 alias tm="tmux"
-alias vi="nvim"
+alias nv="nvim"
+alias lg="lazygit"
 alias ca="batcat"
 
 # Created by Zap installer
-
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 
 # Plugins
-
 plug "zsh-users/zsh-autosuggestions"
 bindkey '^ ' autosuggest-accept
 
@@ -33,12 +30,10 @@ export NVM_LAZY_LOAD_EXTRA_COMMANDS=('nvim' 'npx' 'pnpx')
 plug "lukechilds/zsh-nvm"
 
 # Load and initialise completion system
-
 autoload -Uz compinit
 compinit
 
 # Prompt
-
 autoload -Uz vcs_info
 autoload -U colors && colors
 
@@ -64,7 +59,8 @@ zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]
 PROMPT="%{$fg[blue]%}%n@%m % %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
 PROMPT+="\$vcs_info_msg_0_ "
 
-function yy() {
+# Yazi
+function yz() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
@@ -74,12 +70,10 @@ function yy() {
 }
 
 # Always start tmux
-
-
-# if [ -z "$TMUX" ]
-# then
-#   tmux new-session -A -s main
-# fi
+if [ -z "$TMUX" ]
+then
+  tmux new-session -A -s main
+fi
 
 # pnpm
 export PNPM_HOME="/home/robin/.local/share/pnpm"
