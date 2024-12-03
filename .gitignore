@@ -3,3 +3,4 @@
 tmux/.config/tmux/plugins/
 **/ignore
 nvim/**/lazy-lock.json
+nvim/.config/nvim/spell/

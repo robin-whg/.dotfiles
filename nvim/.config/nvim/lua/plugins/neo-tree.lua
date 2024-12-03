@@ -1,7 +1,6 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {
-    popup_border_style = "rounded",
     window = {
       width = 32,
     },
@@ -12,9 +11,6 @@ return {
         never_show = {
           ".git",
           ".DS_Store",
-          ".obsidian",
-          ".markdownlint.json",
-          ".obsidian.vimrc",
         },
       },
     },

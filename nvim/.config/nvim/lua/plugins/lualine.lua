@@ -25,10 +25,10 @@ return {
         },
       },
       sections = {
-        lualine_a = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {
           { "mode" },
-        },
-        lualine_b = {
           { "branch", icon = icons.git.branch, separator = { left = "", right = "" } },
           {
             "diff",
@@ -38,8 +38,6 @@ return {
               removed = icons.git.removed,
             },
           },
-        },
-        lualine_c = {
           {
             "filename",
             path = 1,
@@ -73,15 +71,13 @@ return {
             end,
           },
           { "filetype" },
-        },
-        lualine_y = {
           { "encoding" },
           { "fileformat", symbols = { unix = "unix", dos = "dos", mac = "mac" } },
-        },
-        lualine_z = {
           { "progress" },
           { "location" },
         },
+        lualine_y = {},
+        lualine_z = {},
       },
       inactive_sections = {
         lualine_a = {},

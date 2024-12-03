@@ -1,5 +1,4 @@
 # Exports
-export PATH="$PATH:/opt/nvim-linux64/bin"
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 
