@@ -1,4 +1,5 @@
 return {
+
   "b0o/incline.nvim",
   config = function()
     require("incline").setup({
@@ -11,11 +12,11 @@ return {
       },
       render = function(props)
         local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
-
+        local modified = vim.bo[props.buf].modified
         return {
           " ",
           filename,
-          "",
+          modified and { "+" } or " ",
         }
       end,
     })

@@ -13,14 +13,18 @@ return {
     inlay_hints = {
       enabled = false,
     },
-    servers = { eslint = {} },
+    servers = {
+      eslint = {},
+    },
     setup = {
       eslint = function()
         require("lazyvim.util").lsp.on_attach(function(client, bufnr)
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            command = "EslintFixAll",
-          })
+          if client.name == "eslint" then
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              buffer = bufnr,
+              command = "EslintFixAll",
+            })
+          end
         end)
       end,
     },
