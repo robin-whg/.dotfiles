@@ -10,5 +10,8 @@ return {
         border = "rounded",
       },
     },
+    notifier = {
+      margin = { right = 0 },
+    },
   },
 }

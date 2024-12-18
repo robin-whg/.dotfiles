@@ -19,7 +19,6 @@ return {
           " ",
           { (ft_icon or "") .. " ", guifg = ft_color, guibg = "none" },
           filename,
-          " ",
         }
       end,
     })
