@@ -3,7 +3,7 @@ return {
   opts = function()
     return {
       window = {
-        width = 0.25,
+        width = 0.20,
       },
     }
   end,

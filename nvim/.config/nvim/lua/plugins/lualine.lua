@@ -28,7 +28,7 @@ return {
         lualine_a = {},
         lualine_b = {},
         lualine_c = {
-          { "mode" },
+          { "mode", padding = { left = 0, right = 1 } },
           { "branch", icon = icons.git.branch, separator = { left = "", right = "" } },
           {
             "diff",
@@ -74,7 +74,7 @@ return {
           { "encoding" },
           { "fileformat", symbols = { unix = "unix", dos = "dos", mac = "mac" } },
           { "location" },
-          { "progress" },
+          { "progress", padding = { right = 0, left = 1 } },
         },
         lualine_y = {},
         lualine_z = {},

@@ -32,12 +32,5 @@ return {
       opts.routes,
       { filter = { event = "notify", find = "No information available" }, opts = { skip = true } }
     )
-    -- table.insert(opts.routes, {
-    --   filter = {
-    --     event = "notify",
-    --     find = "Client volar quit with exit code 1 and signal 0. Check log for errors: /home/robin/.local/state/nvim/lsp.log",
-    --   },
-    --   opts = { skip = true },
-    -- })
   end,
 }
