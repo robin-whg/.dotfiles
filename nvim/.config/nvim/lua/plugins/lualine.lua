@@ -32,6 +32,7 @@ return {
           { "branch", icon = icons.git.branch, separator = { left = "", right = "" } },
           {
             "diff",
+            colored = false,
             symbols = {
               added = icons.git.added,
               modified = icons.git.modified,
@@ -70,7 +71,7 @@ return {
               return ok and #clients > 0
             end,
           },
-          { "filetype" },
+          { "filetype", colored = false },
           { "encoding" },
           { "fileformat", symbols = { unix = "unix", dos = "dos", mac = "mac" } },
           { "location" },

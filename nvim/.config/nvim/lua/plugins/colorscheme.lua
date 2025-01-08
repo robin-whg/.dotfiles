@@ -3,9 +3,10 @@ return {
     "folke/tokyonight.nvim",
     opts = {
       style = "moon",
+      transparent = true,
       styles = {
-        sidebars = "normal",
-        floats = "normal",
+        sidebars = "transparent",
+        floats = "transparent",
       },
     },
   },
