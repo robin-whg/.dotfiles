@@ -15,18 +15,27 @@ return {
     },
     servers = {
       eslint = {},
+      volar = {},
     },
     setup = {
       eslint = function()
-        require("lazyvim.util").lsp.on_attach(function(client, bufnr)
+        require("lazyvim.util").lsp.on_attach(function(client)
           if client.name == "eslint" then
-            vim.api.nvim_create_autocmd("BufWritePre", {
-              buffer = bufnr,
-              command = "EslintFixAll",
-            })
+            client.server_capabilities.documentFormattingProvider = true
+          elseif client.name == "vtsls" then
+            client.server_capabilities.documentFormattingProvider = false
+          elseif client.name == "volar" then
+            client.server_capabilities.documentFormattingProvider = false
           end
         end)
       end,
+      -- volar = function()
+      --   require("lazyvim.util").lsp.on_attach(function(client)
+      --     if client.name == "vtsls" then
+      --       client.stop(client, false)
+      --     end
+      --   end)
+      -- end,
     },
   },
 }

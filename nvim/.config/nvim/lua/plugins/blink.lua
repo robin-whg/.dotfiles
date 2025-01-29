@@ -11,11 +11,11 @@ return {
           border = "rounded",
         },
       },
-      signature = {
-        window = {
-          border = "rounded",
-        },
-      },
+      -- signature = {
+      --   window = {
+      --     border = "rounded",
+      --   },
+      -- },
     },
   },
 }
