@@ -14,20 +14,6 @@ return {
         indent = false,
         wrap = true,
       },
-      on_open = function()
-        require("blink.cmp").setup({
-          enabled = function()
-            return false
-          end,
-        })
-      end,
-      on_close = function()
-        require("blink.cmp").setup({
-          enabled = function()
-            return true
-          end,
-        })
-      end,
     },
     styles = {
       float = {
